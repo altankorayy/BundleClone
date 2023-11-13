@@ -7,50 +7,82 @@
 
 import UIKit
 
+enum SectionType: CaseIterable {
+    case header
+    case news
+}
+
 class HomeViewController: UIViewController {
     
-    private let collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createItemLayout())
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
-        return collectionView
-    }()
+    public let sections = SectionType.allCases
+    
+    private var collectionView: UICollectionView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemBackground
+        navigationItem.title = "NEWS"
+        configureInterfaceStyle()
+        
+        let collectionView = createCollectionView()
+        self.collectionView = collectionView
         view.addSubview(collectionView)
         
-        setUpCollectionView()
         configureConstraints()
     }
     
-    private static func createHeaderLayout() -> NSCollectionLayoutSection {
+    private func createCollectionView() -> UICollectionView {
+        let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
+            return self.createSection(for: sectionIndex)
+        }
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = UIColor.clear
+        return collectionView
+    }
+    
+    private func createHeaderLayout() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)))
         item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8), heightDimension: .absolute(150)), subitems: [item])
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .absolute(120)), subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
         return section
     }
     
-    private static func createItemLayout() -> UICollectionViewCompositionalLayout {
+    private func createItemLayout() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1)))
         item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(2/5)), subitems: [item, item])
         
         let section = NSCollectionLayoutSection(group: group)
-        return UICollectionViewCompositionalLayout(section: section)
+        return section
     }
     
-    private func setUpCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
+    private func createSection(for sectionIndex: Int) -> NSCollectionLayoutSection {
+        
+        switch sections[sectionIndex] {
+        case .header:
+            return createHeaderLayout()
+        case .news:
+            return createItemLayout()
+        }
+    }
+    
+    private func configureInterfaceStyle() {
+        if UIScreen.darkMode {
+            view.backgroundColor = UIColor.bundleColor
+        } else {
+            view.backgroundColor = .white
+        }
     }
     
     private func configureConstraints() {
+        guard let collectionView = collectionView else { return }
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
@@ -62,6 +94,10 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return sections.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20
     }

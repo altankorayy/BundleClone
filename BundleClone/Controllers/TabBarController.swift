@@ -30,6 +30,7 @@ class TabBarController: UITabBarController {
         notificationsVC.tabBarItem.selectedImage = UIImage(systemName: "bell.fill")
         
         tabBar.tintColor = .label
+        tabBar.barTintColor = UIColor.tabBarColor
         
         setViewControllers([homeVC, featuredVC, contentStoreVC, notificationsVC], animated: true)
     }

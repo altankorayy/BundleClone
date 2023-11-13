@@ -12,8 +12,16 @@ class ContentStoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemBackground
+        navigationItem.title = "CONTENT STORE"
+        configureInterfaceStyle()
     }
 
+    private func configureInterfaceStyle() {
+        if UIScreen.darkMode {
+            view.backgroundColor = UIColor.bundleColor
+        } else {
+            view.backgroundColor = .white
+        }
+    }
 
 }
