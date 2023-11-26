@@ -12,11 +12,17 @@ enum SectionType: CaseIterable {
     case news
 }
 
+
 class HomeViewController: UIViewController {
     
     public let sections = SectionType.allCases
     
     private var collectionView: UICollectionView?
+    
+    private var model: [Article] = []
+    private var errorString: String = ""
+    
+    private let viewModel = HomeViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +33,10 @@ class HomeViewController: UIViewController {
         let collectionView = createCollectionView()
         self.collectionView = collectionView
         view.addSubview(collectionView)
+        
+        viewModel.apiRequest = APIRequest()
+        viewModel.delegate = self
+        viewModel.fetchTopHeadlines()
         
         configureConstraints()
     }
@@ -54,14 +64,22 @@ class HomeViewController: UIViewController {
     }
     
     private func createItemLayout() -> NSCollectionLayoutSection {
-        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1)))
-        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        let leftItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(200)))
+        leftItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 5)
         
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(2/5)), subitems: [item, item])
+        let rightItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(200)))
+        rightItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200)), subitems: [leftItem, rightItem])
         
         let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 10
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0)
+        
         return section
     }
+
+
     
     private func createSection(for sectionIndex: Int) -> NSCollectionLayoutSection {
         
@@ -99,7 +117,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        switch sections[section] {
+        case .header:
+            return 20
+        case .news:
+            return model.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -107,10 +130,31 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return UICollectionViewCell()
         }
         
+        switch sections[indexPath.section] {
+        case .header:
+            break
+        case .news:
+            let newsModel = model[indexPath.row]
+            cell.configure(model: newsModel)
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+    }
+}
+
+extension HomeViewController: NewsTopHeadlines {
+    func topHeadlines(_ model: [Article]) {
+        self.model = model
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView?.reloadData()
+        }
+    }
+    
+    func fetchError(_ error: String) {
+        self.errorString = error
     }
 }
