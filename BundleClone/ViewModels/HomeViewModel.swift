@@ -9,18 +9,28 @@ import Foundation
 
 protocol NewsTopHeadlines: AnyObject {
     func topHeadlines(_ model: [Article])
+    func appleNews(_ model: [Article])
 }
 
 class HomeViewModel {
     
-    var apiRequest: APIRequest?
     weak var delegate: NewsTopHeadlines?
     
-    public func fetchTopHeadlines() {
-        guard let request = apiRequest else {
-            print("error: urlString is nil or not an APIRequest")
-            return
+    public func fetchAppleNews() {
+        let request = APIRequest(endpoint: .appleNews)
+        
+        APIService.shared.execute(request, expecting: NewsModelResponse.self) { [weak self] result in
+            switch result {
+            case .success(let model):
+                self?.delegate?.appleNews(model.articles)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
+    }
+    
+    public func fetchTopHeadlines() {
+        let request = APIRequest(endpoint: .topHeadlines)
         
         APIService.shared.execute(request, expecting: NewsModelResponse.self) { [weak self] result in
             switch result {

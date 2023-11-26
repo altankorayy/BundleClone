@@ -33,7 +33,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.font = .systemFont(ofSize: 16, weight: .regular)
         label.textAlignment = .left
         label.textColor = .label
         label.numberOfLines = 0
@@ -42,7 +42,10 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        layer.cornerRadius = 8
+        
+        contentView.layer.cornerRadius = 8
+        contentView.clipsToBounds = true
+        
         contentView.backgroundColor = .secondarySystemBackground
         
         contentView.addSubviews(imageView, sourceLabel, titleLabel)
@@ -85,7 +88,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.leftAnchor.constraint(equalTo: leftAnchor),
             imageView.rightAnchor.constraint(equalTo: rightAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: 75),
+            imageView.heightAnchor.constraint(equalToConstant: 80),
             
             sourceLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 5),
             sourceLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
@@ -94,7 +97,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
             titleLabel.topAnchor.constraint(equalTo: sourceLabel.bottomAnchor, constant: 5),
             titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 3),
             titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: 3),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -3)
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4)
         ])
     }
 }

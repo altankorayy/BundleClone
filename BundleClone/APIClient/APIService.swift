@@ -9,7 +9,6 @@ import Foundation
 
 class APIService {
     static let shared = APIService()
-    let apiRequest = APIRequest()
     
     enum APIServiceError: Error {
         case failedToCreateRequest
@@ -17,7 +16,7 @@ class APIService {
     }
     
     public func execute<T: Codable>(_ request: APIRequest, expecting type: T.Type, completion: @escaping(Result<T, Error>) -> Void) {
-        guard let urlRequest = self.request() else {
+        guard let urlRequest = self.request(for: request) else {
             completion(.failure(APIServiceError.failedToCreateRequest))
             return
         }
@@ -38,7 +37,7 @@ class APIService {
         task.resume()
     }
     
-    private func request() -> URLRequest? {
+    private func request(for apiRequest: APIRequest) -> URLRequest? {
         guard let url = apiRequest.url else { return nil }
         var request = URLRequest(url: url)
         request.httpMethod = apiRequest.httpMethod

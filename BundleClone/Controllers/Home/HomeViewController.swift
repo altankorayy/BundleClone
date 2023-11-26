@@ -12,18 +12,19 @@ enum SectionType: CaseIterable {
     case news
 }
 
-
 class HomeViewController: UIViewController {
+    
+    private var topHeadlinesModel: [Article] = []
+    private var appleNewsModel: [Article] = []
     
     public let sections = SectionType.allCases
     
     private var collectionView: UICollectionView?
     
-    private var model: [Article] = []
     private var errorString: String = ""
     
     private let viewModel = HomeViewModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,9 +35,9 @@ class HomeViewController: UIViewController {
         self.collectionView = collectionView
         view.addSubview(collectionView)
         
-        viewModel.apiRequest = APIRequest()
-        viewModel.delegate = self
+        viewModel.fetchAppleNews()
         viewModel.fetchTopHeadlines()
+        viewModel.delegate = self
         
         configureConstraints()
     }
@@ -51,6 +52,8 @@ class HomeViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.clear
+        collectionView.isHidden = true
+        collectionView.alpha = 0
         return collectionView
     }
     
@@ -64,13 +67,13 @@ class HomeViewController: UIViewController {
     }
     
     private func createItemLayout() -> NSCollectionLayoutSection {
-        let leftItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(200)))
+        let leftItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(220)))
         leftItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 5)
         
-        let rightItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(200)))
+        let rightItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(220)))
         rightItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
         
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200)), subitems: [leftItem, rightItem])
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(220)), subitems: [leftItem, rightItem])
         
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 10
@@ -79,7 +82,15 @@ class HomeViewController: UIViewController {
         return section
     }
 
-
+    private func reloadCollectionView() {
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView?.reloadData()
+            self?.collectionView?.isHidden = false
+            UIView.animate(withDuration: 0.5) {
+                self?.collectionView?.alpha = 1
+            }
+        }
+    }
     
     private func createSection(for sectionIndex: Int) -> NSCollectionLayoutSection {
         
@@ -119,9 +130,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch sections[section] {
         case .header:
-            return 20
+            return appleNewsModel.count
         case .news:
-            return model.count
+            return topHeadlinesModel.count
         }
     }
     
@@ -132,9 +143,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         switch sections[indexPath.section] {
         case .header:
-            break
+            
+            let appleNewsModel = appleNewsModel[indexPath.row]
+            cell.configure(model: appleNewsModel)
         case .news:
-            let newsModel = model[indexPath.row]
+            let newsModel = topHeadlinesModel[indexPath.row]
             cell.configure(model: newsModel)
         }
         return cell
@@ -146,12 +159,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 extension HomeViewController: NewsTopHeadlines {
+    func appleNews(_ model: [Article]) {
+        self.appleNewsModel = model
+        reloadCollectionView()
+    }
+    
     func topHeadlines(_ model: [Article]) {
-        self.model = model
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.collectionView?.reloadData()
-        }
+        self.topHeadlinesModel = model
+        reloadCollectionView()
     }
     
     func fetchError(_ error: String) {
