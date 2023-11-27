@@ -58,12 +58,18 @@ class MenuViewController: UIViewController {
         
         view.addSubview(menuTableView)
         
+        configureHeaderView()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         menuTableView.frame = CGRect(x: 0, y: view.safeAreaInsets.top, width: view.bounds.size.width, height: view.bounds.size.height)
+    }
+    
+    private func configureHeaderView() {
+        let headerView = MenuHaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 200))
+        menuTableView.tableHeaderView = headerView
     }
 }
 
@@ -116,7 +122,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 60
     }
     
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {

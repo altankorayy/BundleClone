@@ -45,15 +45,20 @@ class HomeViewController: UIViewController {
         viewModel.fetchTopHeadlines()
         viewModel.delegate = self
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .done, target: self, action: #selector(didTapSideMenu))
-        navigationItem.leftBarButtonItem?.tintColor = .label
-        
+        configureNavigationBar()
         configureConstraints()
     }
     
     @objc
     private func didTapSideMenu() {
         delegate?.didSelectMenu()
+    }
+    
+    private func configureNavigationBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .done, target: self, action: #selector(didTapSideMenu))
+        navigationItem.leftBarButtonItem?.tintColor = .label
+        
+        navigationController?.navigationBar.barTintColor = UIColor.bundleColor
     }
     
     private func createCollectionView() -> UICollectionView {
@@ -85,7 +90,7 @@ class HomeViewController: UIViewController {
         leftItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 5)
         
         let rightItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(220)))
-        rightItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        rightItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 5)
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(220)), subitems: [leftItem, rightItem])
         
@@ -157,7 +162,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         switch sections[indexPath.section] {
         case .header:
-            
             let appleNewsModel = appleNewsModel[indexPath.row]
             cell.configure(model: appleNewsModel)
         case .news:

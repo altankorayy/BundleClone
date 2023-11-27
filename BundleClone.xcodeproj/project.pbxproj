@@ -28,6 +28,7 @@
 		E1884C242B14A2D00064E190 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1884C232B14A2D00064E190 /* ContainerViewController.swift */; };
 		E1884C262B14A2F40064E190 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1884C252B14A2F40064E190 /* MenuViewController.swift */; };
 		E1884C282B14AF7E0064E190 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1884C272B14AF7E0064E190 /* MenuTableViewCell.swift */; };
+		E1884C2A2B14F75C0064E190 /* MenuHaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1884C292B14F75C0064E190 /* MenuHaderView.swift */; };
 		E1A44FD42B0133730096AC35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A44FD32B0133730096AC35 /* AppDelegate.swift */; };
 		E1A44FD62B0133730096AC35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A44FD52B0133730096AC35 /* SceneDelegate.swift */; };
 		E1A44FD82B0133730096AC35 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A44FD72B0133730096AC35 /* TabBarController.swift */; };
@@ -77,6 +78,7 @@
 		E1884C232B14A2D00064E190 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		E1884C252B14A2F40064E190 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		E1884C272B14AF7E0064E190 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		E1884C292B14F75C0064E190 /* MenuHaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHaderView.swift; sourceTree = "<group>"; };
 		E1A44FD02B0133730096AC35 /* BundleClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BundleClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A44FD32B0133730096AC35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1A44FD52B0133730096AC35 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				E1884C232B14A2D00064E190 /* ContainerViewController.swift */,
 				E1884C252B14A2F40064E190 /* MenuViewController.swift */,
 				E1884C272B14AF7E0064E190 /* MenuTableViewCell.swift */,
+				E1884C292B14F75C0064E190 /* MenuHaderView.swift */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				E1A44FD62B0133730096AC35 /* SceneDelegate.swift in Sources */,
 				E17F6A0F2B029042005136F3 /* Extensions.swift in Sources */,
 				E1884C242B14A2D00064E190 /* ContainerViewController.swift in Sources */,
+				E1884C2A2B14F75C0064E190 /* MenuHaderView.swift in Sources */,
 				E14601912B13750C00FEEF3E /* ImageLoader.swift in Sources */,
 				E15CA9622B0FBFDB00884139 /* NewsModel.swift in Sources */,
 				E16FE1C02B0136B300677464 /* HomeViewController.swift in Sources */,

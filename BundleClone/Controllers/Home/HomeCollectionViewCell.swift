@@ -92,12 +92,12 @@ class HomeCollectionViewCell: UICollectionViewCell {
             
             sourceLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 5),
             sourceLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
-            sourceLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: 3),
+            sourceLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -3),
             
             titleLabel.topAnchor.constraint(equalTo: sourceLabel.bottomAnchor, constant: 5),
             titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 3),
-            titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: 3),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4)
+            titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -3),
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6)
         ])
     }
 }

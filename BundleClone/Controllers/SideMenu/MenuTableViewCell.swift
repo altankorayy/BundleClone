@@ -45,7 +45,7 @@ class MenuTableViewCell: UITableViewCell {
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             newsTypeLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            newsTypeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10)
+            newsTypeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20)
         ])
     }
     
