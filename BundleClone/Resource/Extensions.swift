@@ -21,6 +21,6 @@ extension UIView {
 }
 
 extension UIColor {
-    static let bundleColor = UIColor(red: 17/255, green: 33/255, blue: 45/255, alpha: 1)
+    static let bundleColor = UIColor(red: 9/255, green: 19/255, blue: 26/255, alpha: 1)
     static let tabBarColor = UIColor(red: 13/255, green: 27/255, blue: 35/255, alpha: 1)
 }

@@ -12,7 +12,7 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let homeVC = UINavigationController(rootViewController: HomeViewController())
+        let homeVC = ContainerViewController()
         let featuredVC = UINavigationController(rootViewController: FeaturedViewController())
         let contentStoreVC = UINavigationController(rootViewController: ContentStoreViewController())
         let notificationsVC = UINavigationController(rootViewController: NotificationsViewController())

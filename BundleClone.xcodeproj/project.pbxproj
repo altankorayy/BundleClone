@@ -25,6 +25,9 @@
 		E17F6A112B02994B005136F3 /* FeaturedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F6A102B02994B005136F3 /* FeaturedTableViewCell.swift */; };
 		E17F6A142B02A79A005136F3 /* FeaturedTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F6A132B02A79A005136F3 /* FeaturedTableViewHeader.swift */; };
 		E17F6A162B02AB8E005136F3 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F6A152B02AB8E005136F3 /* NotificationsTableViewCell.swift */; };
+		E1884C242B14A2D00064E190 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1884C232B14A2D00064E190 /* ContainerViewController.swift */; };
+		E1884C262B14A2F40064E190 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1884C252B14A2F40064E190 /* MenuViewController.swift */; };
+		E1884C282B14AF7E0064E190 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1884C272B14AF7E0064E190 /* MenuTableViewCell.swift */; };
 		E1A44FD42B0133730096AC35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A44FD32B0133730096AC35 /* AppDelegate.swift */; };
 		E1A44FD62B0133730096AC35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A44FD52B0133730096AC35 /* SceneDelegate.swift */; };
 		E1A44FD82B0133730096AC35 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A44FD72B0133730096AC35 /* TabBarController.swift */; };
@@ -71,6 +74,9 @@
 		E17F6A102B02994B005136F3 /* FeaturedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedTableViewCell.swift; sourceTree = "<group>"; };
 		E17F6A132B02A79A005136F3 /* FeaturedTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedTableViewHeader.swift; sourceTree = "<group>"; };
 		E17F6A152B02AB8E005136F3 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
+		E1884C232B14A2D00064E190 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		E1884C252B14A2F40064E190 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		E1884C272B14AF7E0064E190 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		E1A44FD02B0133730096AC35 /* BundleClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BundleClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A44FD32B0133730096AC35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1A44FD52B0133730096AC35 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +177,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E1884C1E2B149ECE0064E190 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E1884C232B14A2D00064E190 /* ContainerViewController.swift */,
+				E1884C252B14A2F40064E190 /* MenuViewController.swift */,
+				E1884C272B14AF7E0064E190 /* MenuTableViewCell.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		E1A44FC72B0133730096AC35 = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +253,7 @@
 		E1A450042B0133F10096AC35 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E1884C1E2B149ECE0064E190 /* SideMenu */,
 				E14C2AD92B01469500A57A78 /* Home */,
 				E14C2ADA2B0146A200A57A78 /* Featured */,
 				E14C2ADB2B0146AA00A57A78 /* ContentStore */,
@@ -414,6 +431,7 @@
 			files = (
 				E17F6A162B02AB8E005136F3 /* NotificationsTableViewCell.swift in Sources */,
 				E15CA9642B0FC29D00884139 /* APIService.swift in Sources */,
+				E1884C282B14AF7E0064E190 /* MenuTableViewCell.swift in Sources */,
 				E1A44FD82B0133730096AC35 /* TabBarController.swift in Sources */,
 				E1A44FD42B0133730096AC35 /* AppDelegate.swift in Sources */,
 				E14C2AD62B0143B500A57A78 /* ContentStoreViewModel.swift in Sources */,
@@ -426,6 +444,7 @@
 				E14C2AD42B0143A900A57A78 /* FeaturedViewModel.swift in Sources */,
 				E1A44FD62B0133730096AC35 /* SceneDelegate.swift in Sources */,
 				E17F6A0F2B029042005136F3 /* Extensions.swift in Sources */,
+				E1884C242B14A2D00064E190 /* ContainerViewController.swift in Sources */,
 				E14601912B13750C00FEEF3E /* ImageLoader.swift in Sources */,
 				E15CA9622B0FBFDB00884139 /* NewsModel.swift in Sources */,
 				E16FE1C02B0136B300677464 /* HomeViewController.swift in Sources */,
@@ -433,6 +452,7 @@
 				E16FE1C22B0136BF00677464 /* FeaturedViewController.swift in Sources */,
 				E15CA9662B0FC2A700884139 /* APIRequest.swift in Sources */,
 				E14C2ADE2B0146E700A57A78 /* HomeCollectionViewCell.swift in Sources */,
+				E1884C262B14A2F40064E190 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
