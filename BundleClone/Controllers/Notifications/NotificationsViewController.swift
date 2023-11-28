@@ -10,6 +10,10 @@ import UIKit
 class NotificationsViewController: UIViewController {
     
     private var tableView: UITableView?
+    
+    private let viewModel = NotificationsViewModel()
+    
+    private var notificationsModel: [Article] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +26,16 @@ class NotificationsViewController: UIViewController {
         
         view.addSubview(tableView)
         
+        viewModel.fetchNotifications()
+        viewModel.delegate = self
+        
         configureConstraints()
+    }
+    
+    public func reloadTableView() {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView?.reloadData()
+        }
     }
     
     private func configureTableView() -> UITableView {
@@ -58,14 +71,15 @@ class NotificationsViewController: UIViewController {
 
 extension NotificationsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return notificationsModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NotificationsTableViewCell.identifier, for: indexPath) as? NotificationsTableViewCell else {
             return UITableViewCell()
         }
-        
+        let model = notificationsModel[indexPath.row]
+        cell.configure(with: model)
         return cell
     }
     
@@ -75,5 +89,12 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+}
+
+extension NotificationsViewController: NotificationsModelPass {
+    func notificationsModel(_ model: [Article]) {
+        self.notificationsModel = model
+        reloadTableView()
     }
 }

@@ -59,17 +59,21 @@ class MenuViewController: UIViewController {
         view.addSubview(menuTableView)
         
         configureHeaderView()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        menuTableView.frame = CGRect(x: 0, y: view.safeAreaInsets.top, width: view.bounds.size.width, height: view.bounds.size.height)
+        configureConstraints()
     }
     
     private func configureHeaderView() {
         let headerView = MenuHaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 200))
         menuTableView.tableHeaderView = headerView
+    }
+    
+    private func configureConstraints() {
+        NSLayoutConstraint.activate([
+            menuTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            menuTableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            menuTableView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            menuTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+        ])
     }
 }
 
