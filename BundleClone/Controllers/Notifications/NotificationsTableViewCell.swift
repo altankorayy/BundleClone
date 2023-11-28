@@ -67,16 +67,13 @@ class NotificationsTableViewCell: UITableViewCell {
         dateLabel.text = nil
     }
     
-    private func formatDate(from dateString: String) -> String? {
+    private func formatDate(from dateString: String, dateFormat: String) -> String? {
         let isoDateFormatter = ISO8601DateFormatter()
         
         if let date = isoDateFormatter.date(from: dateString) {
-            let calendar = Calendar.current
-            let components = calendar.dateComponents([.year, .month, .day], from: date)
-            
             let dateFormatter = DateFormatter()
             dateFormatter.locale = Locale(identifier: "en_US")
-            dateFormatter.dateFormat = "d MMMM"
+            dateFormatter.dateFormat = dateFormat
             let formattedDate = dateFormatter.string(from: date)
             
             return formattedDate
@@ -85,29 +82,12 @@ class NotificationsTableViewCell: UITableViewCell {
         return nil
     }
     
-    private func formatHour(from dateString: String) -> String? {
-        let isoDateFormatter = ISO8601DateFormatter()
-        
-        if let date = isoDateFormatter.date(from: dateString) {
-            let calendar = Calendar.current
-            let components = calendar.dateComponents([.hour], from: date)
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.locale = Locale(identifier: "en_US")
-            dateFormatter.dateFormat = "HH:mm"
-            let formattedHour = dateFormatter.string(from: date)
-            
-            return formattedHour
-        }
-        return nil
-    }
-    
     public func configure(with model: Article) {
         sourceLabel.text = model.source.name
         titleLabel.text = model.title
-        let dateString = formatDate(from: model.publishedAt)
+        let dateString = formatDate(from: model.publishedAt, dateFormat: "dd MMMM")
         dateLabel.text = dateString
-        let hourString = formatHour(from: model.publishedAt)
+        let hourString = formatDate(from: model.publishedAt, dateFormat: "HH:mm")
         hourLabel.text = hourString
     }
     
@@ -129,7 +109,7 @@ class NotificationsTableViewCell: UITableViewCell {
             
             dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             dateLabel.leftAnchor.constraint(equalTo: hourLabel.rightAnchor, constant: 15),
-            dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
+            dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
     }
 }

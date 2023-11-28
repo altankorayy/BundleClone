@@ -14,9 +14,9 @@ class APIRequest {
         static let apiKey = "446190b3c206471a90dce632251cdff2"
     }
     
-    var endpoint: APIEndpoint.APIEndpoint
+    let endpoint: APIEndpoint
     
-    init(endpoint: APIEndpoint.APIEndpoint) {
+    init(endpoint: APIEndpoint) {
         self.endpoint = endpoint
     }
     

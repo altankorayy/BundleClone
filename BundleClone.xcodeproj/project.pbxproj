@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E14346932B16424D00608BB5 /* APICacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14346922B16424D00608BB5 /* APICacheManager.swift */; };
 		E14601912B13750C00FEEF3E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14601902B13750C00FEEF3E /* ImageLoader.swift */; };
 		E14C2AD22B01439E00A57A78 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C2AD12B01439E00A57A78 /* HomeViewModel.swift */; };
 		E14C2AD42B0143A900A57A78 /* FeaturedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C2AD32B0143A900A57A78 /* FeaturedViewModel.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E14346922B16424D00608BB5 /* APICacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICacheManager.swift; sourceTree = "<group>"; };
 		E14601902B13750C00FEEF3E /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		E14C2AD12B01439E00A57A78 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E14C2AD32B0143A900A57A78 /* FeaturedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedViewModel.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				E14601902B13750C00FEEF3E /* ImageLoader.swift */,
+				E14346922B16424D00608BB5 /* APICacheManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				E1A44FD42B0133730096AC35 /* AppDelegate.swift in Sources */,
 				E14C2AD62B0143B500A57A78 /* ContentStoreViewModel.swift in Sources */,
 				E16FE1C42B0136D400677464 /* ContentStoreViewController.swift in Sources */,
+				E14346932B16424D00608BB5 /* APICacheManager.swift in Sources */,
 				E14C2AD22B01439E00A57A78 /* HomeViewModel.swift in Sources */,
 				E15CA9682B0FC2B700884139 /* APIEndpoint.swift in Sources */,
 				E17F6A112B02994B005136F3 /* FeaturedTableViewCell.swift in Sources */,
