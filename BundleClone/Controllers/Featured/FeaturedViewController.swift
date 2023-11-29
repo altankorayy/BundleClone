@@ -10,6 +10,9 @@ import UIKit
 class FeaturedViewController: UIViewController {
     
     private var tableView: UITableView?
+    private let viewModel = FeaturedViewModel()
+    
+    private var model: [Article] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,9 @@ class FeaturedViewController: UIViewController {
         let tableView = createTableView()
         self.tableView = tableView
         view.addSubview(tableView)
+        
+        viewModel.fetchFeaturedNews()
+        viewModel.delegate = self
         
         configureConstraints()
         
@@ -33,7 +39,19 @@ class FeaturedViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.clear
+        tableView.alpha = 0
+        tableView.separatorStyle = .none
         return tableView
+    }
+    
+    private func reloadTableView() {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView?.reloadData()
+            
+            UIView.animate(withDuration: 0.4) {
+                self?.tableView?.alpha = 1
+            }
+        }
     }
     
     private func configureInterfaceStyle() {
@@ -46,7 +64,7 @@ class FeaturedViewController: UIViewController {
     
     private func setHeaderView() {
         let header = FeaturedTableViewHeader()
-        header.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 200)
+        header.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 120)
         
         self.tableView?.tableHeaderView = header
     }
@@ -65,13 +83,15 @@ class FeaturedViewController: UIViewController {
 
 extension FeaturedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return model.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FeaturedTableViewCell.identifier, for: indexPath) as? FeaturedTableViewCell else {
             return UITableViewCell()
         }
+        let featuredModel = model[indexPath.row]
+        cell.configure(with: featuredModel)
         return cell
     }
     
@@ -80,6 +100,13 @@ extension FeaturedViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+        return 150
+    }
+}
+
+extension FeaturedViewController: FeaturedModel {
+    func featuredModel(_ model: [Article]) {
+        self.model = model
+        reloadTableView()
     }
 }

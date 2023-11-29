@@ -35,6 +35,9 @@ class NotificationsViewController: UIViewController {
     public func reloadTableView() {
         DispatchQueue.main.async { [weak self] in
             self?.tableView?.reloadData()
+            UIView.animate(withDuration: 0.3) {
+                self?.tableView?.alpha = 1
+            }
         }
     }
     
@@ -45,6 +48,7 @@ class NotificationsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.clear
+        tableView.alpha = 0
         return tableView
     }
 
