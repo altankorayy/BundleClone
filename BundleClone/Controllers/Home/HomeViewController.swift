@@ -173,6 +173,24 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let topHeadlinesModel = topHeadlinesModel[indexPath.row]
+        let headerModel = appleNewsModel[indexPath.row]
+        
+        switch sections[indexPath.section] {
+        case .header:
+            DispatchQueue.main.async { [weak self] in
+                let detailVC = DetailsViewController()
+                detailVC.configure(with: headerModel)
+                self?.navigationController?.pushViewController(detailVC, animated: true)
+            }
+        case .news:
+            DispatchQueue.main.async { [weak self] in
+                let detailVC = DetailsViewController()
+                detailVC.configure(with: topHeadlinesModel)
+                self?.navigationController?.pushViewController(detailVC, animated: true)
+            }
+        }
     }
 }
 

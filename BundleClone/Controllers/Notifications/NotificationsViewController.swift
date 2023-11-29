@@ -89,6 +89,14 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let selectedModel = notificationsModel[indexPath.row]
+        
+        DispatchQueue.main.async { [weak self] in
+            let detailVC = DetailsViewController()
+            detailVC.configure(with: selectedModel)
+            self?.navigationController?.pushViewController(detailVC, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
