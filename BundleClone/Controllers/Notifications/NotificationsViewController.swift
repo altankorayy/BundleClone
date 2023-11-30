@@ -30,6 +30,13 @@ class NotificationsViewController: UIViewController {
         viewModel.delegate = self
         
         configureConstraints()
+        
+        configureNavigationBar()
+    }
+    
+    private func configureNavigationBar() {
+        navigationController?.navigationBar.tintColor = .label
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
     }
     
     public func reloadTableView() {

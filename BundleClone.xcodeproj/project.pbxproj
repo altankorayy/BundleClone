@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E13E293D2B192654007CBC21 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13E293C2B192654007CBC21 /* WebViewViewController.swift */; };
 		E14346932B16424D00608BB5 /* APICacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14346922B16424D00608BB5 /* APICacheManager.swift */; };
 		E14601912B13750C00FEEF3E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14601902B13750C00FEEF3E /* ImageLoader.swift */; };
 		E14C2AD22B01439E00A57A78 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C2AD12B01439E00A57A78 /* HomeViewModel.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E13E293C2B192654007CBC21 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		E14346922B16424D00608BB5 /* APICacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICacheManager.swift; sourceTree = "<group>"; };
 		E14601902B13750C00FEEF3E /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		E14C2AD12B01439E00A57A78 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E13E293B2B192642007CBC21 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				E13E293C2B192654007CBC21 /* WebViewViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		E146018F2B1374FD00FEEF3E /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +282,7 @@
 				E14C2ADA2B0146A200A57A78 /* Featured */,
 				E14C2ADB2B0146AA00A57A78 /* ContentStore */,
 				E14C2ADC2B0146B200A57A78 /* Notifications */,
+				E13E293B2B192642007CBC21 /* WebView */,
 				E1A44FD72B0133730096AC35 /* TabBarController.swift */,
 			);
 			path = Controllers;
@@ -462,6 +473,7 @@
 				E14C2AD62B0143B500A57A78 /* ContentStoreViewModel.swift in Sources */,
 				E16FE1C42B0136D400677464 /* ContentStoreViewController.swift in Sources */,
 				E14346932B16424D00608BB5 /* APICacheManager.swift in Sources */,
+				E13E293D2B192654007CBC21 /* WebViewViewController.swift in Sources */,
 				E14C2AD22B01439E00A57A78 /* HomeViewModel.swift in Sources */,
 				E15CA9682B0FC2B700884139 /* APIEndpoint.swift in Sources */,
 				E17F6A112B02994B005136F3 /* FeaturedTableViewCell.swift in Sources */,

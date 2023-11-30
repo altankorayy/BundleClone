@@ -49,6 +49,9 @@ extension ContainerViewController: HomeViewControllerDelegate {
     func didSelectMenu() {
         switch menuState {
         case .closed:
+            let headerView = MenuHaderView()
+            headerView.hiddenState(with: true)
+            
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut) {
                 self.navVC?.view.frame.origin.x = self.homeVC.view.frame.size.width - 100
             } completion: { [weak self] done in
@@ -57,6 +60,9 @@ extension ContainerViewController: HomeViewControllerDelegate {
                 }
             }
         case .opened:
+            let headerView = MenuHaderView()
+            headerView.hiddenState(with: false)
+            
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut) {
                 self.navVC?.view.frame.origin.x = 0
             } completion: { [weak self] done in

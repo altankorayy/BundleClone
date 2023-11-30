@@ -57,8 +57,9 @@ class HomeViewController: UIViewController {
     private func configureNavigationBar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .done, target: self, action: #selector(didTapSideMenu))
         navigationItem.leftBarButtonItem?.tintColor = .label
-        
         navigationController?.navigationBar.barTintColor = UIColor.bundleColor
+        navigationController?.navigationBar.tintColor = .label
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
     }
     
     private func createCollectionView() -> UICollectionView {

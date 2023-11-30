@@ -6,8 +6,14 @@
 //
 
 import UIKit
+import SafariServices
 
 class DetailsViewController: UIViewController {
+    
+    private let segmentedControl: UISegmentedControl = {
+        let segmentedControl = UISegmentedControl()
+        return segmentedControl
+    }()
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -62,14 +68,28 @@ class DetailsViewController: UIViewController {
         button.layer.borderColor = UIColor.label.cgColor
         return button
     }()
+    
+    private var model: Article?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.bundleColor
-        view.addSubviews(imageView, titleLabel, sourceLabel, dateLabel, descriptionLabel, websideButton)
+        view.addSubviews(segmentedControl, imageView, titleLabel, sourceLabel, dateLabel, descriptionLabel, websideButton)
+        
+        websideButton.addTarget(self, action: #selector(didTapWebsideButton), for: .touchUpInside)
         
         configureConstraints()
+    }
+    
+    @objc
+    private func didTapWebsideButton() {
+        guard Thread.current.isMainThread else { return }
+        
+        guard let urlString = model?.url else { return }
+        let webView = WebViewViewController()
+        webView.loadWebside(url: urlString)
+        navigationController?.pushViewController(webView, animated: true)
     }
     
     private func formatDate(date: String) -> String? {
@@ -96,6 +116,7 @@ class DetailsViewController: UIViewController {
     }
     
     public func configure(with model: Article) {
+        self.model = model
         titleLabel.text = model.title
         sourceLabel.text = "\(model.source.name) •"
         guard let elapsedMinutes = formatDate(date: model.publishedAt) else { return }

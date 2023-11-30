@@ -52,6 +52,18 @@ class MenuHaderView: UIView {
         fatalError()
     }
     
+    public func hiddenState(with state: Bool) {
+        if state {
+            bundleLogo.isHidden = true
+            usernameLabel.isHidden = true
+            settingsButton.isHidden = true
+        } else {
+            bundleLogo.isHidden = false
+            usernameLabel.isHidden = false
+            settingsButton.isHidden = false
+        }
+    }
+    
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             bundleLogo.topAnchor.constraint(equalTo: topAnchor, constant: 15),

@@ -14,6 +14,13 @@ class ContentStoreViewController: UIViewController {
 
         navigationItem.title = "CONTENT STORE"
         configureInterfaceStyle()
+        
+        configureNavigationBar()
+    }
+    
+    private func configureNavigationBar() {
+        navigationController?.navigationBar.tintColor = .label
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
     }
 
     private func configureInterfaceStyle() {
