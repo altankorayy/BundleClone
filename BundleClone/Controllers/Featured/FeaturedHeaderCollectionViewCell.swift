@@ -11,15 +11,15 @@ class FeaturedHeaderCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "FeaturedHeaderCollectionViewCell"
     
-    private let imageView: UIImageView = {
+    private var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 30
         imageView.layer.masksToBounds = true
         imageView.clipsToBounds = true
-        imageView.layer.borderWidth = 1
         imageView.layer.borderColor = UIColor.red.cgColor
+        imageView.layer.borderWidth = 1
         return imageView
     }()
     

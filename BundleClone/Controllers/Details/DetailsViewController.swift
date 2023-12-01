@@ -9,12 +9,7 @@ import UIKit
 import SafariServices
 
 class DetailsViewController: UIViewController {
-    
-    private let segmentedControl: UISegmentedControl = {
-        let segmentedControl = UISegmentedControl()
-        return segmentedControl
-    }()
-    
+        
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -69,17 +64,47 @@ class DetailsViewController: UIViewController {
         return button
     }()
     
+    lazy var segmentedControl: UISegmentedControl = {
+        let items = ["Web","Reader"]
+        let segmentedControl = UISegmentedControl(items: items)
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        segmentedControl.selectedSegmentIndex = 1
+        segmentedControl.layer.borderWidth = 1
+        segmentedControl.layer.borderColor = UIColor.secondaryLabel.cgColor
+        return segmentedControl
+    }()
+    
     private var model: Article?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.bundleColor
-        view.addSubviews(segmentedControl, imageView, titleLabel, sourceLabel, dateLabel, descriptionLabel, websideButton)
+        view.addSubviews(imageView, titleLabel, sourceLabel, dateLabel, descriptionLabel, websideButton, segmentedControl)
         
         websideButton.addTarget(self, action: #selector(didTapWebsideButton), for: .touchUpInside)
+        segmentedControl.addTarget(self, action: #selector(didSelectSegment), for: .valueChanged)
         
+        configureNavigationBar()
+                
         configureConstraints()
+    }
+    
+    @objc
+    private func didSelectSegment() {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            DispatchQueue.main.async { [weak self] in
+                let webVC = WebViewViewController()
+                guard let url = self?.model?.url else { return }
+                webVC.loadWebside(url: url)
+                self?.navigationController?.pushViewController(webVC, animated: true)
+            }
+        case 1:
+            break
+        default:
+            break
+        }
     }
     
     @objc
@@ -90,6 +115,12 @@ class DetailsViewController: UIViewController {
         let webView = WebViewViewController()
         webView.loadWebside(url: urlString)
         navigationController?.pushViewController(webView, animated: true)
+    }
+    
+    private func configureNavigationBar() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
+        
+        navigationItem.titleView = segmentedControl
     }
     
     private func formatDate(date: String) -> String? {
@@ -141,7 +172,7 @@ class DetailsViewController: UIViewController {
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             
-            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 4),
             imageView.widthAnchor.constraint(equalTo: view.widthAnchor),
             imageView.heightAnchor.constraint(equalToConstant: 175),
             

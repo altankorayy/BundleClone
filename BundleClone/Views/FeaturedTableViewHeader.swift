@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol FeaturedHeaderDelegate: AnyObject {
+    func didSelectItem(_ model: Article)
+}
+
 class FeaturedTableViewHeader: UIView {
+    
+    weak var delegate: FeaturedHeaderDelegate?
     
     private let storyCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -80,6 +86,12 @@ extension FeaturedTableViewHeader: UICollectionViewDelegate, UICollectionViewDat
         let storyModel = model[indexPath.row]
         cell.configure(with: storyModel)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedModel = model[indexPath.row]
+        delegate?.didSelectItem(selectedModel)
+        
     }
 }
 

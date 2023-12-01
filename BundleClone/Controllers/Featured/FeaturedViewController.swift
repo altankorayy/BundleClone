@@ -26,7 +26,7 @@ class FeaturedViewController: UIViewController {
         
         viewModel.fetchFeaturedNews()
         viewModel.delegate = self
-        
+                
         configureConstraints()
         
         setHeaderView()
@@ -74,6 +74,8 @@ class FeaturedViewController: UIViewController {
         header.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 120)
         
         self.tableView?.tableHeaderView = header
+        
+        header.delegate = self
     }
     
     private func configureConstraints() {
@@ -123,5 +125,15 @@ extension FeaturedViewController: FeaturedModel {
     func featuredModel(_ model: [Article]) {
         self.model = model
         reloadTableView()
+    }
+}
+
+extension FeaturedViewController: FeaturedHeaderDelegate {
+    func didSelectItem(_ model: Article) {
+        DispatchQueue.main.async {
+            let detailsVC = DetailsViewController()
+            detailsVC.configure(with: model)
+            self.navigationController?.pushViewController(detailsVC, animated: true)
+        }
     }
 }
