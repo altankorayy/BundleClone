@@ -16,7 +16,7 @@ class NotificationsViewModel {
     weak var delegate: NotificationsModelPass?
     
     public func fetchNotifications() {
-        let request = APIRequest(endpoint: .notifications)
+        let request = APIRequest(endpoint: .notifications, query: nil)
         
         APIService.shared.execute(request, expecting: NewsModelResponse.self) { [weak self] result in
             switch result {

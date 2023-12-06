@@ -15,9 +15,11 @@ class APIRequest {
     }
     
     let endpoint: APIEndpoint
+    let query: String?
     
-    init(endpoint: APIEndpoint) {
+    init(endpoint: APIEndpoint, query: String?) {
         self.endpoint = endpoint
+        self.query = query
     }
     
     private var urlString: String {
@@ -29,8 +31,23 @@ class APIRequest {
         return string
     }
     
+    private var searchUrlString: String {
+        guard let query = query else { return ""}
+        var string = Constants.baseUrl
+        string += "/"
+        string += endpoint.rawValue
+        string += query
+        string += "&apiKey="
+        string += Constants.apiKey
+        return string
+    }
+    
     public var url: URL? {
         return URL(string: urlString)
+    }
+    
+    public var searchUrl: URL? {
+        return URL(string: searchUrlString)
     }
     
     public let httpMethod = "GET"

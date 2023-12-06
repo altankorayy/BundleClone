@@ -16,7 +16,7 @@ class FeaturedTableViewHeaderViewModel {
     weak var delegate: FeaturedTableViewHeaderModel?
     
     public func fetchStoryNews() {
-        let request = APIRequest(endpoint: .science)
+        let request = APIRequest(endpoint: .science, query: nil)
         
         APIService.shared.execute(request, expecting: NewsModelResponse.self) { [weak self] result in
             switch result {

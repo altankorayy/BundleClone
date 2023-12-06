@@ -13,4 +13,5 @@ enum APIEndpoint: String, CaseIterable, Hashable {
     case notifications = "everything?q=finance"
     case featured = "everything?q=bitcoin"
     case science = "everything?q=science"
+    case search = "everything?q="
 }

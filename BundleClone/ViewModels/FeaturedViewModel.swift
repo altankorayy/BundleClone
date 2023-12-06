@@ -16,7 +16,7 @@ class FeaturedViewModel {
     weak var delegate: FeaturedModel?
     
     public func fetchFeaturedNews() {
-        let request = APIRequest(endpoint: .featured)
+        let request = APIRequest(endpoint: .featured, query: nil)
         
         APIService.shared.execute(request, expecting: NewsModelResponse.self) { [weak self] result in
             switch result {

@@ -8,14 +8,29 @@
 import UIKit
 
 class ContentStoreViewController: UIViewController {
+    
+    private let searchController: UISearchController = {
+        let searchResultsVC = SearchResultsViewController()
+        let searchResultsNav = UINavigationController(rootViewController: searchResultsVC)
+        let searchController = UISearchController(searchResultsController: searchResultsNav)
+        searchController.searchBar.placeholder = "Search for News, Sources or Topics"
+        searchController.hidesNavigationBarDuringPresentation = false
+        return searchController
+    }()
+    
+    private let viewModel = ContentStoreViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.title = "CONTENT STORE"
-        configureInterfaceStyle()
         
+        navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
+        
+        configureInterfaceStyle()
         configureNavigationBar()
+        
     }
     
     private func configureNavigationBar() {
@@ -31,4 +46,15 @@ class ContentStoreViewController: UIViewController {
         }
     }
 
+}
+
+extension ContentStoreViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        
+        guard let query = searchBar.text, !query.trimmingCharacters(in: .whitespaces).isEmpty, query.trimmingCharacters(in: .whitespaces).count >= 1 else { return }
+        
+        viewModel.queryString = query
+        viewModel.search()
+    }
 }
