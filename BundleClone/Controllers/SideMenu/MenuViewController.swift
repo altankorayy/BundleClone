@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol MenuViewControllerDelegate: AnyObject {
+    func didSelect(menuItem: MenuViewController.MenuOptions)
+}
+
 class MenuViewController: UIViewController {
+    
+    weak var delegate: MenuViewControllerDelegate?
     
     enum MenuOptions: String, CaseIterable {
         case all = "ALL"
@@ -67,7 +73,7 @@ class MenuViewController: UIViewController {
     }
     
     private func configureHeaderView() {
-        let headerView = MenuHaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 200))
+        let headerView = MenuHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 200))
         menuTableView.tableHeaderView = headerView
     }
 }
@@ -118,6 +124,33 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+                
+        switch indexPath.section {
+        case Sections.all.rawValue:
+            delegate?.didSelect(menuItem: MenuOptions.all)
+        case Sections.sports.rawValue:
+            delegate?.didSelect(menuItem: MenuOptions.sports)
+        case Sections.gaming.rawValue:
+            delegate?.didSelect(menuItem: MenuOptions.gaming)
+        case Sections.tech.rawValue:
+            delegate?.didSelect(menuItem: MenuOptions.tech)
+        case Sections.politics.rawValue:
+            delegate?.didSelect(menuItem: MenuOptions.politics)
+        case Sections.finance.rawValue:
+            delegate?.didSelect(menuItem: MenuOptions.finance)
+        case Sections.lifestyle.rawValue:
+            delegate?.didSelect(menuItem: MenuOptions.lifestyle)
+        case Sections.science.rawValue:
+            delegate?.didSelect(menuItem: MenuOptions.science)
+        case Sections.news.rawValue:
+            delegate?.didSelect(menuItem: MenuOptions.news)
+        case Sections.cinema.rawValue:
+            delegate?.didSelect(menuItem: MenuOptions.cinema)
+        case Sections.arts.rawValue:
+            delegate?.didSelect(menuItem: MenuOptions.arts)
+        default:
+            break
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

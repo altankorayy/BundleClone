@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MenuHaderView: UIView {
+class MenuHeaderView: UIView {
     
     public let bundleLogo: UIImageView = {
         let imageView = UIImageView()

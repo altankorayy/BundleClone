@@ -8,7 +8,7 @@
 import UIKit
 
 class SearchResultsViewController: UIViewController {
-    
+        
     private var collectionView: UICollectionView?
     private let viewModel = ContentStoreViewModel()
     
@@ -22,6 +22,8 @@ class SearchResultsViewController: UIViewController {
         let collectionView = createCollectionView()
         self.collectionView = collectionView
         view.addSubview(collectionView)
+        
+        navigationController?.navigationBar.tintColor = .label
         
         addObserver()
         
@@ -92,7 +94,7 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        
+                
         DispatchQueue.main.async {
             let detailVC = DetailsViewController()
             let selectedModel = self.model[indexPath.row]

@@ -14,10 +14,9 @@ class ContentStoreViewController: UIViewController {
         let searchResultsNav = UINavigationController(rootViewController: searchResultsVC)
         let searchController = UISearchController(searchResultsController: searchResultsNav)
         searchController.searchBar.placeholder = "Search for News, Sources or Topics"
-        searchController.hidesNavigationBarDuringPresentation = false
         return searchController
     }()
-    
+        
     private let viewModel = ContentStoreViewModel()
 
     override func viewDidLoad() {
@@ -27,6 +26,8 @@ class ContentStoreViewController: UIViewController {
         
         navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        
         
         configureInterfaceStyle()
         configureNavigationBar()
@@ -48,7 +49,7 @@ class ContentStoreViewController: UIViewController {
 
 }
 
-extension ContentStoreViewController: UISearchResultsUpdating {
+extension ContentStoreViewController: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         

@@ -19,7 +19,7 @@ class ContainerViewController: UIViewController {
     let menuVC = MenuViewController()
     let homeVC = HomeViewController()
     var navVC: UINavigationController?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +30,7 @@ class ContainerViewController: UIViewController {
 
     private func addChildVCs() {
         // Menu
+        menuVC.delegate = self
         addChild(menuVC)
         view.addSubview(menuVC.view)
         menuVC.didMove(toParent: self)
@@ -47,9 +48,13 @@ class ContainerViewController: UIViewController {
 
 extension ContainerViewController: HomeViewControllerDelegate {
     func didSelectMenu() {
+        toggleMenu(completion: nil)
+    }
+    
+    func toggleMenu(completion: (() -> Void)?) {
         switch menuState {
         case .closed:
-            let headerView = MenuHaderView()
+            let headerView = MenuHeaderView()
             headerView.hiddenState(with: true)
             
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut) {
@@ -60,7 +65,7 @@ extension ContainerViewController: HomeViewControllerDelegate {
                 }
             }
         case .opened:
-            let headerView = MenuHaderView()
+            let headerView = MenuHeaderView()
             headerView.hiddenState(with: false)
             
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut) {
@@ -68,8 +73,58 @@ extension ContainerViewController: HomeViewControllerDelegate {
             } completion: { [weak self] done in
                 if done {
                     self?.menuState = .closed
+                    
+                    DispatchQueue.main.async {
+                        completion?()
+                    }
                 }
             }
         }
+    }
+}
+
+extension ContainerViewController: MenuViewControllerDelegate {
+    func didSelect(menuItem: MenuViewController.MenuOptions) {
+        toggleMenu { [weak self] in
+            switch menuItem {
+            case .all:
+                break // fix here
+            case .news:
+                self?.addItems(viewController: NewsViewController()) // fix here
+            case .tech:
+                self?.addItems(viewController: TechViewController())
+            case .gaming:
+                self?.addItems(viewController: GamingViewController())
+            case .politics:
+                self?.addItems(viewController: PoliticsViewController())
+            case .finance:
+                self?.addItems(viewController: FinanceViewController())
+            case .lifestyle:
+                self?.addItems(viewController: LifestyleViewController())
+            case .science:
+                self?.addItems(viewController: ScienceViewController())
+            case .sports:
+                self?.addItems(viewController: SportsViewController())
+            case .cinema:
+                self?.addItems(viewController: CinemaViewController())
+            case .arts:
+                self?.addItems(viewController: ArtsViewController())
+            }
+        }
+    }
+    
+    func addItems(viewController: UIViewController) {
+        let vc = viewController
+        homeVC.addChild(vc)
+        homeVC.view.addSubview(vc.view)
+        vc.view.frame = view.frame
+        vc.didMove(toParent: homeVC)
+        homeVC.title = viewController.title
+    }
+    
+    func resetToHome() {
+        menuVC.view.removeFromSuperview()
+        menuVC.didMove(toParent: nil)
+        homeVC.title = menuVC.title
     }
 }

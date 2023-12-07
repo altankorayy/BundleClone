@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E126070B2B224B95003DEC27 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E126070A2B224B95003DEC27 /* NewsViewController.swift */; };
+		E126070D2B226627003DEC27 /* TechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E126070C2B226627003DEC27 /* TechViewController.swift */; };
+		E126070F2B226631003DEC27 /* GamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E126070E2B226631003DEC27 /* GamingViewController.swift */; };
+		E12607112B226638003DEC27 /* PoliticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12607102B226638003DEC27 /* PoliticsViewController.swift */; };
+		E12607132B226649003DEC27 /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12607122B226649003DEC27 /* FinanceViewController.swift */; };
+		E12607152B226657003DEC27 /* LifestyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12607142B226657003DEC27 /* LifestyleViewController.swift */; };
+		E12607172B22665F003DEC27 /* ScienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12607162B22665F003DEC27 /* ScienceViewController.swift */; };
+		E12607192B22666B003DEC27 /* SportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12607182B22666B003DEC27 /* SportsViewController.swift */; };
+		E126071B2B226671003DEC27 /* CinemaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E126071A2B226671003DEC27 /* CinemaViewController.swift */; };
+		E126071D2B22667B003DEC27 /* ArtsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E126071C2B22667B003DEC27 /* ArtsViewController.swift */; };
 		E13E293D2B192654007CBC21 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13E293C2B192654007CBC21 /* WebViewViewController.swift */; };
 		E14346932B16424D00608BB5 /* APICacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14346922B16424D00608BB5 /* APICacheManager.swift */; };
 		E14601912B13750C00FEEF3E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14601902B13750C00FEEF3E /* ImageLoader.swift */; };
@@ -32,7 +42,7 @@
 		E1884C242B14A2D00064E190 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1884C232B14A2D00064E190 /* ContainerViewController.swift */; };
 		E1884C262B14A2F40064E190 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1884C252B14A2F40064E190 /* MenuViewController.swift */; };
 		E1884C282B14AF7E0064E190 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1884C272B14AF7E0064E190 /* MenuTableViewCell.swift */; };
-		E1884C2A2B14F75C0064E190 /* MenuHaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1884C292B14F75C0064E190 /* MenuHaderView.swift */; };
+		E1884C2A2B14F75C0064E190 /* MenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1884C292B14F75C0064E190 /* MenuHeaderView.swift */; };
 		E19C21292B207EA500A8D5DA /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19C21282B207EA500A8D5DA /* SearchResultsViewController.swift */; };
 		E1A44FD42B0133730096AC35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A44FD32B0133730096AC35 /* AppDelegate.swift */; };
 		E1A44FD62B0133730096AC35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A44FD52B0133730096AC35 /* SceneDelegate.swift */; };
@@ -63,6 +73,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E126070A2B224B95003DEC27 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		E126070C2B226627003DEC27 /* TechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechViewController.swift; sourceTree = "<group>"; };
+		E126070E2B226631003DEC27 /* GamingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamingViewController.swift; sourceTree = "<group>"; };
+		E12607102B226638003DEC27 /* PoliticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliticsViewController.swift; sourceTree = "<group>"; };
+		E12607122B226649003DEC27 /* FinanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceViewController.swift; sourceTree = "<group>"; };
+		E12607142B226657003DEC27 /* LifestyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifestyleViewController.swift; sourceTree = "<group>"; };
+		E12607162B22665F003DEC27 /* ScienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScienceViewController.swift; sourceTree = "<group>"; };
+		E12607182B22666B003DEC27 /* SportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsViewController.swift; sourceTree = "<group>"; };
+		E126071A2B226671003DEC27 /* CinemaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaViewController.swift; sourceTree = "<group>"; };
+		E126071C2B22667B003DEC27 /* ArtsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtsViewController.swift; sourceTree = "<group>"; };
 		E13E293C2B192654007CBC21 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		E14346922B16424D00608BB5 /* APICacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICacheManager.swift; sourceTree = "<group>"; };
 		E14601902B13750C00FEEF3E /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
@@ -88,7 +108,7 @@
 		E1884C232B14A2D00064E190 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		E1884C252B14A2F40064E190 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		E1884C272B14AF7E0064E190 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
-		E1884C292B14F75C0064E190 /* MenuHaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHaderView.swift; sourceTree = "<group>"; };
+		E1884C292B14F75C0064E190 /* MenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderView.swift; sourceTree = "<group>"; };
 		E19C21282B207EA500A8D5DA /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		E1A44FD02B0133730096AC35 /* BundleClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BundleClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A44FD32B0133730096AC35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +150,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E12607092B224B7F003DEC27 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E126070A2B224B95003DEC27 /* NewsViewController.swift */,
+				E126070C2B226627003DEC27 /* TechViewController.swift */,
+				E126070E2B226631003DEC27 /* GamingViewController.swift */,
+				E12607102B226638003DEC27 /* PoliticsViewController.swift */,
+				E12607122B226649003DEC27 /* FinanceViewController.swift */,
+				E12607142B226657003DEC27 /* LifestyleViewController.swift */,
+				E12607162B22665F003DEC27 /* ScienceViewController.swift */,
+				E12607182B22666B003DEC27 /* SportsViewController.swift */,
+				E126071A2B226671003DEC27 /* CinemaViewController.swift */,
+				E126071C2B22667B003DEC27 /* ArtsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		E13E293B2B192642007CBC21 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,7 +234,7 @@
 		E17F6A122B02A76F005136F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E1884C292B14F75C0064E190 /* MenuHaderView.swift */,
+				E1884C292B14F75C0064E190 /* MenuHeaderView.swift */,
 				E17F6A132B02A79A005136F3 /* FeaturedTableViewHeader.swift */,
 			);
 			path = Views;
@@ -209,6 +246,7 @@
 				E1884C232B14A2D00064E190 /* ContainerViewController.swift */,
 				E1884C252B14A2F40064E190 /* MenuViewController.swift */,
 				E1884C272B14AF7E0064E190 /* MenuTableViewCell.swift */,
+				E12607092B224B7F003DEC27 /* ViewControllers */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -475,24 +513,34 @@
 				E1E52BBB2B178FF700077484 /* DetailsViewController.swift in Sources */,
 				E14C2AD62B0143B500A57A78 /* ContentStoreViewModel.swift in Sources */,
 				E16FE1C42B0136D400677464 /* ContentStoreViewController.swift in Sources */,
+				E126070D2B226627003DEC27 /* TechViewController.swift in Sources */,
 				E14346932B16424D00608BB5 /* APICacheManager.swift in Sources */,
 				E13E293D2B192654007CBC21 /* WebViewViewController.swift in Sources */,
+				E12607192B22666B003DEC27 /* SportsViewController.swift in Sources */,
+				E126071D2B22667B003DEC27 /* ArtsViewController.swift in Sources */,
 				E19C21292B207EA500A8D5DA /* SearchResultsViewController.swift in Sources */,
 				E14C2AD22B01439E00A57A78 /* HomeViewModel.swift in Sources */,
 				E15CA9682B0FC2B700884139 /* APIEndpoint.swift in Sources */,
 				E17F6A112B02994B005136F3 /* FeaturedTableViewCell.swift in Sources */,
+				E126070B2B224B95003DEC27 /* NewsViewController.swift in Sources */,
 				E14C2AD82B0143D400A57A78 /* NotificationsViewModel.swift in Sources */,
 				E17F6A142B02A79A005136F3 /* FeaturedTableViewHeader.swift in Sources */,
+				E126070F2B226631003DEC27 /* GamingViewController.swift in Sources */,
 				E14C2AD42B0143A900A57A78 /* FeaturedViewModel.swift in Sources */,
 				E1A44FD62B0133730096AC35 /* SceneDelegate.swift in Sources */,
 				E17F6A0F2B029042005136F3 /* Extensions.swift in Sources */,
 				E1884C242B14A2D00064E190 /* ContainerViewController.swift in Sources */,
-				E1884C2A2B14F75C0064E190 /* MenuHaderView.swift in Sources */,
+				E126071B2B226671003DEC27 /* CinemaViewController.swift in Sources */,
+				E1884C2A2B14F75C0064E190 /* MenuHeaderView.swift in Sources */,
+				E12607132B226649003DEC27 /* FinanceViewController.swift in Sources */,
 				E14601912B13750C00FEEF3E /* ImageLoader.swift in Sources */,
 				E15CA9622B0FBFDB00884139 /* NewsModel.swift in Sources */,
 				E16FE1C02B0136B300677464 /* HomeViewController.swift in Sources */,
+				E12607172B22665F003DEC27 /* ScienceViewController.swift in Sources */,
 				E165CB7D2B17599B001AF30E /* FeaturedHeaderCollectionViewCell.swift in Sources */,
+				E12607112B226638003DEC27 /* PoliticsViewController.swift in Sources */,
 				E16FE1C62B0136E500677464 /* NotificationsViewController.swift in Sources */,
+				E12607152B226657003DEC27 /* LifestyleViewController.swift in Sources */,
 				E16FE1C22B0136BF00677464 /* FeaturedViewController.swift in Sources */,
 				E15CA9662B0FC2A700884139 /* APIRequest.swift in Sources */,
 				E14C2ADE2B0146E700A57A78 /* HomeCollectionViewCell.swift in Sources */,

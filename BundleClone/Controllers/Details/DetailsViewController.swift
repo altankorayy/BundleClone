@@ -85,9 +85,12 @@ class DetailsViewController: UIViewController {
         websideButton.addTarget(self, action: #selector(didTapWebsideButton), for: .touchUpInside)
         segmentedControl.addTarget(self, action: #selector(didSelectSegment), for: .valueChanged)
         
+        navigationController?.navigationBar.tintColor = .label
+        
         configureNavigationBar()
                 
         configureConstraints()
+        
     }
     
     @objc
