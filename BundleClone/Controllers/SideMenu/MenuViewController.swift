@@ -17,7 +17,6 @@ class MenuViewController: UIViewController {
     
     enum MenuOptions: String, CaseIterable {
         case all = "ALL"
-        case news = "NEWS"
         case tech = "TECHNOLOGY"
         case gaming = "GAMING & GEEK"
         case politics = "POLITICS"
@@ -31,19 +30,18 @@ class MenuViewController: UIViewController {
     
     enum Sections: Int {
         case all = 0
-        case news = 1
-        case tech = 2
-        case gaming = 3
-        case politics = 4
-        case finance = 5
-        case lifestyle = 6
-        case science = 7
-        case sports = 8
-        case cinema = 9
-        case arts = 10
+        case tech = 1
+        case gaming = 2
+        case politics = 3
+        case finance = 4
+        case lifestyle = 5
+        case science = 6
+        case sports = 7
+        case cinema = 8
+        case arts = 9
     }
     
-    let sectionTitles = [" "," "," "," "," "," "," "," "," "," "," "]
+    let sectionTitles = [" "," "," "," "," "," "," "," "," "," "]
     
     private let menuTableView: UITableView = {
         let tableView = UITableView()
@@ -109,8 +107,6 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configure(headers: MenuOptions.lifestyle.rawValue)
         case Sections.science.rawValue:
             cell.configure(headers: MenuOptions.science.rawValue)
-        case Sections.news.rawValue:
-            cell.configure(headers: MenuOptions.news.rawValue)
         case Sections.cinema.rawValue:
             cell.configure(headers: MenuOptions.cinema.rawValue)
         case Sections.arts.rawValue:
@@ -142,8 +138,6 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             delegate?.didSelect(menuItem: MenuOptions.lifestyle)
         case Sections.science.rawValue:
             delegate?.didSelect(menuItem: MenuOptions.science)
-        case Sections.news.rawValue:
-            delegate?.didSelect(menuItem: MenuOptions.news)
         case Sections.cinema.rawValue:
             delegate?.didSelect(menuItem: MenuOptions.cinema)
         case Sections.arts.rawValue:

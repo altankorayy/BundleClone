@@ -7,16 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E126070B2B224B95003DEC27 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E126070A2B224B95003DEC27 /* NewsViewController.swift */; };
-		E126070D2B226627003DEC27 /* TechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E126070C2B226627003DEC27 /* TechViewController.swift */; };
-		E126070F2B226631003DEC27 /* GamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E126070E2B226631003DEC27 /* GamingViewController.swift */; };
-		E12607112B226638003DEC27 /* PoliticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12607102B226638003DEC27 /* PoliticsViewController.swift */; };
-		E12607132B226649003DEC27 /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12607122B226649003DEC27 /* FinanceViewController.swift */; };
-		E12607152B226657003DEC27 /* LifestyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12607142B226657003DEC27 /* LifestyleViewController.swift */; };
-		E12607172B22665F003DEC27 /* ScienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12607162B22665F003DEC27 /* ScienceViewController.swift */; };
-		E12607192B22666B003DEC27 /* SportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12607182B22666B003DEC27 /* SportsViewController.swift */; };
-		E126071B2B226671003DEC27 /* CinemaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E126071A2B226671003DEC27 /* CinemaViewController.swift */; };
-		E126071D2B22667B003DEC27 /* ArtsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E126071C2B22667B003DEC27 /* ArtsViewController.swift */; };
+		E1100CA62B2494310030C5CB /* SideMenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1100CA52B2494300030C5CB /* SideMenuDetailViewController.swift */; };
+		E1100CA82B249A3D0030C5CB /* SideMenuDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1100CA72B249A3D0030C5CB /* SideMenuDetailViewModel.swift */; };
 		E13E293D2B192654007CBC21 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13E293C2B192654007CBC21 /* WebViewViewController.swift */; };
 		E14346932B16424D00608BB5 /* APICacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14346922B16424D00608BB5 /* APICacheManager.swift */; };
 		E14601912B13750C00FEEF3E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14601902B13750C00FEEF3E /* ImageLoader.swift */; };
@@ -73,16 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E126070A2B224B95003DEC27 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
-		E126070C2B226627003DEC27 /* TechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechViewController.swift; sourceTree = "<group>"; };
-		E126070E2B226631003DEC27 /* GamingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamingViewController.swift; sourceTree = "<group>"; };
-		E12607102B226638003DEC27 /* PoliticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliticsViewController.swift; sourceTree = "<group>"; };
-		E12607122B226649003DEC27 /* FinanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceViewController.swift; sourceTree = "<group>"; };
-		E12607142B226657003DEC27 /* LifestyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifestyleViewController.swift; sourceTree = "<group>"; };
-		E12607162B22665F003DEC27 /* ScienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScienceViewController.swift; sourceTree = "<group>"; };
-		E12607182B22666B003DEC27 /* SportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsViewController.swift; sourceTree = "<group>"; };
-		E126071A2B226671003DEC27 /* CinemaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaViewController.swift; sourceTree = "<group>"; };
-		E126071C2B22667B003DEC27 /* ArtsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtsViewController.swift; sourceTree = "<group>"; };
+		E1100CA52B2494300030C5CB /* SideMenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuDetailViewController.swift; sourceTree = "<group>"; };
+		E1100CA72B249A3D0030C5CB /* SideMenuDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuDetailViewModel.swift; sourceTree = "<group>"; };
 		E13E293C2B192654007CBC21 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		E14346922B16424D00608BB5 /* APICacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICacheManager.swift; sourceTree = "<group>"; };
 		E14601902B13750C00FEEF3E /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
@@ -150,21 +134,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E12607092B224B7F003DEC27 /* ViewControllers */ = {
+		E1100CA42B2494050030C5CB /* SideMenuDetailVC */ = {
 			isa = PBXGroup;
 			children = (
-				E126070A2B224B95003DEC27 /* NewsViewController.swift */,
-				E126070C2B226627003DEC27 /* TechViewController.swift */,
-				E126070E2B226631003DEC27 /* GamingViewController.swift */,
-				E12607102B226638003DEC27 /* PoliticsViewController.swift */,
-				E12607122B226649003DEC27 /* FinanceViewController.swift */,
-				E12607142B226657003DEC27 /* LifestyleViewController.swift */,
-				E12607162B22665F003DEC27 /* ScienceViewController.swift */,
-				E12607182B22666B003DEC27 /* SportsViewController.swift */,
-				E126071A2B226671003DEC27 /* CinemaViewController.swift */,
-				E126071C2B22667B003DEC27 /* ArtsViewController.swift */,
+				E1100CA52B2494300030C5CB /* SideMenuDetailViewController.swift */,
 			);
-			path = ViewControllers;
+			path = SideMenuDetailVC;
 			sourceTree = "<group>";
 		};
 		E13E293B2B192642007CBC21 /* WebView */ = {
@@ -246,7 +221,7 @@
 				E1884C232B14A2D00064E190 /* ContainerViewController.swift */,
 				E1884C252B14A2F40064E190 /* MenuViewController.swift */,
 				E1884C272B14AF7E0064E190 /* MenuTableViewCell.swift */,
-				E12607092B224B7F003DEC27 /* ViewControllers */,
+				E1100CA42B2494050030C5CB /* SideMenuDetailVC */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -353,6 +328,7 @@
 				E14C2AD52B0143B500A57A78 /* ContentStoreViewModel.swift */,
 				E14C2AD72B0143D400A57A78 /* NotificationsViewModel.swift */,
 				E165CB7E2B175FF0001AF30E /* FeaturedTableViewHeaderViewModel.swift */,
+				E1100CA72B249A3D0030C5CB /* SideMenuDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -507,40 +483,32 @@
 				E17F6A162B02AB8E005136F3 /* NotificationsTableViewCell.swift in Sources */,
 				E165CB7F2B175FF0001AF30E /* FeaturedTableViewHeaderViewModel.swift in Sources */,
 				E15CA9642B0FC29D00884139 /* APIService.swift in Sources */,
+				E1100CA62B2494310030C5CB /* SideMenuDetailViewController.swift in Sources */,
 				E1884C282B14AF7E0064E190 /* MenuTableViewCell.swift in Sources */,
 				E1A44FD82B0133730096AC35 /* TabBarController.swift in Sources */,
 				E1A44FD42B0133730096AC35 /* AppDelegate.swift in Sources */,
 				E1E52BBB2B178FF700077484 /* DetailsViewController.swift in Sources */,
 				E14C2AD62B0143B500A57A78 /* ContentStoreViewModel.swift in Sources */,
 				E16FE1C42B0136D400677464 /* ContentStoreViewController.swift in Sources */,
-				E126070D2B226627003DEC27 /* TechViewController.swift in Sources */,
 				E14346932B16424D00608BB5 /* APICacheManager.swift in Sources */,
 				E13E293D2B192654007CBC21 /* WebViewViewController.swift in Sources */,
-				E12607192B22666B003DEC27 /* SportsViewController.swift in Sources */,
-				E126071D2B22667B003DEC27 /* ArtsViewController.swift in Sources */,
 				E19C21292B207EA500A8D5DA /* SearchResultsViewController.swift in Sources */,
 				E14C2AD22B01439E00A57A78 /* HomeViewModel.swift in Sources */,
 				E15CA9682B0FC2B700884139 /* APIEndpoint.swift in Sources */,
 				E17F6A112B02994B005136F3 /* FeaturedTableViewCell.swift in Sources */,
-				E126070B2B224B95003DEC27 /* NewsViewController.swift in Sources */,
 				E14C2AD82B0143D400A57A78 /* NotificationsViewModel.swift in Sources */,
 				E17F6A142B02A79A005136F3 /* FeaturedTableViewHeader.swift in Sources */,
-				E126070F2B226631003DEC27 /* GamingViewController.swift in Sources */,
 				E14C2AD42B0143A900A57A78 /* FeaturedViewModel.swift in Sources */,
+				E1100CA82B249A3D0030C5CB /* SideMenuDetailViewModel.swift in Sources */,
 				E1A44FD62B0133730096AC35 /* SceneDelegate.swift in Sources */,
 				E17F6A0F2B029042005136F3 /* Extensions.swift in Sources */,
 				E1884C242B14A2D00064E190 /* ContainerViewController.swift in Sources */,
-				E126071B2B226671003DEC27 /* CinemaViewController.swift in Sources */,
 				E1884C2A2B14F75C0064E190 /* MenuHeaderView.swift in Sources */,
-				E12607132B226649003DEC27 /* FinanceViewController.swift in Sources */,
 				E14601912B13750C00FEEF3E /* ImageLoader.swift in Sources */,
 				E15CA9622B0FBFDB00884139 /* NewsModel.swift in Sources */,
 				E16FE1C02B0136B300677464 /* HomeViewController.swift in Sources */,
-				E12607172B22665F003DEC27 /* ScienceViewController.swift in Sources */,
 				E165CB7D2B17599B001AF30E /* FeaturedHeaderCollectionViewCell.swift in Sources */,
-				E12607112B226638003DEC27 /* PoliticsViewController.swift in Sources */,
 				E16FE1C62B0136E500677464 /* NotificationsViewController.swift in Sources */,
-				E12607152B226657003DEC27 /* LifestyleViewController.swift in Sources */,
 				E16FE1C22B0136BF00677464 /* FeaturedViewController.swift in Sources */,
 				E15CA9662B0FC2A700884139 /* APIRequest.swift in Sources */,
 				E14C2ADE2B0146E700A57A78 /* HomeCollectionViewCell.swift in Sources */,

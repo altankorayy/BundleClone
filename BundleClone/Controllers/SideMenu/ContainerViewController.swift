@@ -20,10 +20,36 @@ class ContainerViewController: UIViewController {
     let homeVC = HomeViewController()
     var navVC: UINavigationController?
     
+    private let sideMenuViewModel = SideMenuDetailViewModel()
+    
+    private var artsModel: [Article] = []
+    private var techModel: [Article] = []
+    private var cinemaModel: [Article] = []
+    private var gamingModel: [Article] = []
+    private var sportsModel: [Article] = []
+    private var financeModel: [Article] = []
+    private var scienceModel: [Article] = []
+    private var politicsModel: [Article] = []
+    private var lifestyleModel: [Article] = []
+    private var topHeadlinesModel: [Article] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
+        
+        sideMenuViewModel.fetchArtsNews()
+        sideMenuViewModel.fetchTechNews()
+        sideMenuViewModel.fetchCinemaNews()
+        sideMenuViewModel.fetchGamingNews()
+        sideMenuViewModel.fetchSportsNews()
+        sideMenuViewModel.fetchFinanceNews()
+        sideMenuViewModel.fetchScienceNews()
+        sideMenuViewModel.fetchPoliticsNews()
+        sideMenuViewModel.fetchLifestyleNews()
+        sideMenuViewModel.fetchTopHeadlinesNews()
+        
+        sideMenuViewModel.delegate = self
         
         addChildVCs()
     }
@@ -85,30 +111,29 @@ extension ContainerViewController: HomeViewControllerDelegate {
 
 extension ContainerViewController: MenuViewControllerDelegate {
     func didSelect(menuItem: MenuViewController.MenuOptions) {
+        
         toggleMenu { [weak self] in
             switch menuItem {
             case .all:
-                break // fix here
-            case .news:
-                self?.addItems(viewController: NewsViewController()) // fix here
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.topHeadlinesModel ?? []))
             case .tech:
-                self?.addItems(viewController: TechViewController())
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.techModel ?? []))
             case .gaming:
-                self?.addItems(viewController: GamingViewController())
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.gamingModel ?? []))
             case .politics:
-                self?.addItems(viewController: PoliticsViewController())
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.politicsModel ?? []))
             case .finance:
-                self?.addItems(viewController: FinanceViewController())
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.financeModel ?? []))
             case .lifestyle:
-                self?.addItems(viewController: LifestyleViewController())
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.lifestyleModel ?? []))
             case .science:
-                self?.addItems(viewController: ScienceViewController())
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.scienceModel ?? []))
             case .sports:
-                self?.addItems(viewController: SportsViewController())
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.sportsModel ?? []))
             case .cinema:
-                self?.addItems(viewController: CinemaViewController())
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.cinemaModel ?? []))
             case .arts:
-                self?.addItems(viewController: ArtsViewController())
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.artsModel ?? []))
             }
         }
     }
@@ -121,10 +146,46 @@ extension ContainerViewController: MenuViewControllerDelegate {
         vc.didMove(toParent: homeVC)
         homeVC.title = viewController.title
     }
+}
+
+extension ContainerViewController: SideMenuModelDelegate {
+    func sideMenuTopHeadlines(_ model: [Article]) {
+        self.topHeadlinesModel = model
+    }
     
-    func resetToHome() {
-        menuVC.view.removeFromSuperview()
-        menuVC.didMove(toParent: nil)
-        homeVC.title = menuVC.title
+    func sideMenuFinance(_ model: [Article]) {
+        self.financeModel = model
+    }
+    
+    func sideMenuSports(_ model: [Article]) {
+        self.sportsModel = model
+    }
+    
+    func sideMenuGaming(_ model: [Article]) {
+        self.gamingModel = model
+    }
+    
+    func sideMenuTech(_ model: [Article]) {
+        self.techModel = model
+    }
+    
+    func sideMenuPolitics(_ model: [Article]) {
+        self.politicsModel = model
+    }
+    
+    func sideMenuLifestyle(_ model: [Article]) {
+        self.lifestyleModel = model
+    }
+    
+    func sideMenuScience(_ model: [Article]) {
+        self.scienceModel = model
+    }
+    
+    func sideMenuCinema(_ model: [Article]) {
+        self.cinemaModel = model
+    }
+    
+    func sideMenuArts(_ model: [Article]) {
+        self.artsModel = model
     }
 }

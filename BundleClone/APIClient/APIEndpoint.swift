@@ -14,4 +14,11 @@ enum APIEndpoint: String, CaseIterable, Hashable {
     case featured = "everything?q=bitcoin"
     case science = "everything?q=science"
     case search = "everything?q="
+    case sports = "everything?q=sports"
+    case gaming = "everything?q=gaming"
+    case tech = "everything?q=technology"
+    case politics = "everything?q=politics"
+    case lifestyle = "everything?q=lifetyle"
+    case cinema = "everything?q=cinema"
+    case arts = "everything?q=arts"
 }
