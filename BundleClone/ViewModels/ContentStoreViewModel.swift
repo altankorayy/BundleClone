@@ -21,7 +21,6 @@ class ContentStoreViewModel {
                 NotificationCenter.default.post(name: NSNotification.Name("didUpdateModel"), object: searchModel.articles)
             case .failure(let error):
                 print(error.localizedDescription)
-                print("hata burada")
             }
         }
     }

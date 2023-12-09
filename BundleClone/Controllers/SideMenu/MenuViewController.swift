@@ -50,7 +50,7 @@ class MenuViewController: UIViewController {
         tableView.backgroundColor = UIColor.clear
         return tableView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
