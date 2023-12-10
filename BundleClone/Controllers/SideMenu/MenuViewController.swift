@@ -50,7 +50,7 @@ class MenuViewController: UIViewController {
         tableView.backgroundColor = UIColor.clear
         return tableView
     }()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -73,6 +73,7 @@ class MenuViewController: UIViewController {
     private func configureHeaderView() {
         let headerView = MenuHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 200))
         menuTableView.tableHeaderView = headerView
+        headerView.delegate = self
     }
 }
 
@@ -153,5 +154,15 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return sectionTitles[section]
+    }
+}
+
+extension MenuViewController: DidTapSettingButtonDelegate {
+    func didTapSettingsButton() {
+        DispatchQueue.main.async { [weak self] in
+            let settingsVC = SettingsViewController()
+            settingsVC.sheetPresentationController?.prefersGrabberVisible = true
+            self?.present(settingsVC, animated: true)
+        }
     }
 }

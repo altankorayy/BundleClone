@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol DidTapSettingButtonDelegate: AnyObject {
+    func didTapSettingsButton()
+}
+
 class MenuHeaderView: UIView {
     
     public let bundleLogo: UIImageView = {
@@ -38,18 +42,27 @@ class MenuHeaderView: UIView {
         button.tintColor = .secondaryLabel
         return button
     }()
+    
+    weak var delegate: DidTapSettingButtonDelegate?
         
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         backgroundColor = UIColor(red: 9/255, green: 19/255, blue: 26/255, alpha: 1)
         addSubviews(bundleLogo, usernameLabel, settingsButton)
+        
+        settingsButton.addTarget(self, action: #selector(didTapSettingsButton), for: .touchUpInside)
                 
         configureConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError()
+    }
+    
+    @objc
+    private func didTapSettingsButton() {
+        self.delegate?.didTapSettingsButton()
     }
     
     public func hiddenState(with state: Bool) {
