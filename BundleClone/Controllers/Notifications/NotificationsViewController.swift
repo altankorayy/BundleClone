@@ -19,7 +19,7 @@ class NotificationsViewController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = "NOTIFICATIONS"
-        configureInterfaceStyle()
+        view.backgroundColor = UIColor.setColor(lightColor: .white, darkColor: UIColor.bundleColor)
         
         let tableView = configureTableView()
         self.tableView = tableView
@@ -57,14 +57,6 @@ class NotificationsViewController: UIViewController {
         tableView.backgroundColor = UIColor.clear
         tableView.alpha = 0
         return tableView
-    }
-
-    private func configureInterfaceStyle() {
-        if UIScreen.darkMode {
-            view.backgroundColor = UIColor.bundleColor
-        } else {
-            view.backgroundColor = .white
-        }
     }
     
     private func configureConstraints() {

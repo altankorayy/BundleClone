@@ -60,7 +60,7 @@ class DetailsViewController: UIViewController {
         button.setTitleColor(UIColor.label, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 13, weight: .regular)
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.label.cgColor
+        button.layer.borderColor = UIColor.setColor(lightColor: UIColor.black, darkColor: UIColor.white).cgColor
         return button
     }()
     
@@ -79,7 +79,7 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.bundleColor
+        view.backgroundColor = UIColor.setColor(lightColor: .white, darkColor: UIColor.bundleColor)
         view.addSubviews(imageView, titleLabel, sourceLabel, dateLabel, descriptionLabel, websideButton, segmentedControl)
         
         websideButton.addTarget(self, action: #selector(didTapWebsideButton), for: .touchUpInside)

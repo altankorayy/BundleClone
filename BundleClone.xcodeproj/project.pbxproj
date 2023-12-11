@@ -46,6 +46,8 @@
 		E1A44FF72B0133740096AC35 /* BundleCloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A44FF62B0133740096AC35 /* BundleCloneUITestsLaunchTests.swift */; };
 		E1B07B712B24C683005B840E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B07B702B24C683005B840E /* SettingsViewController.swift */; };
 		E1E52BBB2B178FF700077484 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E52BBA2B178FF700077484 /* DetailsViewController.swift */; };
+		E1F7C9FE2B27347400088C19 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1F7C9FC2B27347400088C19 /* CoreData.xcdatamodeld */; };
+		E1F7CA042B2751F200088C19 /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F7CA032B2751F200088C19 /* DataPersistanceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,8 @@
 		E1A44FF62B0133740096AC35 /* BundleCloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleCloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E1B07B702B24C683005B840E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E1E52BBA2B178FF700077484 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		E1F7C9FD2B27347400088C19 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		E1F7CA032B2751F200088C19 /* DataPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,7 @@
 			children = (
 				E14601902B13750C00FEEF3E /* ImageLoader.swift */,
 				E14346922B16424D00608BB5 /* APICacheManager.swift */,
+				E1F7CA032B2751F200088C19 /* DataPersistanceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				E1A44FD22B0133730096AC35 /* BundleClone */,
+				E1F7C9FC2B27347400088C19 /* CoreData.xcdatamodeld */,
 				E1A44FE92B0133740096AC35 /* BundleCloneTests */,
 				E1A44FF32B0133740096AC35 /* BundleCloneUITests */,
 				E1A44FD12B0133730096AC35 /* Products */,
@@ -518,11 +524,13 @@
 				E14601912B13750C00FEEF3E /* ImageLoader.swift in Sources */,
 				E15CA9622B0FBFDB00884139 /* NewsModel.swift in Sources */,
 				E16FE1C02B0136B300677464 /* HomeViewController.swift in Sources */,
+				E1F7C9FE2B27347400088C19 /* CoreData.xcdatamodeld in Sources */,
 				E165CB7D2B17599B001AF30E /* FeaturedHeaderCollectionViewCell.swift in Sources */,
 				E16FE1C62B0136E500677464 /* NotificationsViewController.swift in Sources */,
 				E1B07B712B24C683005B840E /* SettingsViewController.swift in Sources */,
 				E16FE1C22B0136BF00677464 /* FeaturedViewController.swift in Sources */,
 				E15CA9662B0FC2A700884139 /* APIRequest.swift in Sources */,
+				E1F7CA042B2751F200088C19 /* DataPersistanceManager.swift in Sources */,
 				E14C2ADE2B0146E700A57A78 /* HomeCollectionViewCell.swift in Sources */,
 				E1884C262B14A2F40064E190 /* MenuViewController.swift in Sources */,
 			);
@@ -861,6 +869,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E1F7C9FC2B27347400088C19 /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E1F7C9FD2B27347400088C19 /* CoreData.xcdatamodel */,
+			);
+			currentVersion = E1F7C9FD2B27347400088C19 /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E1A44FC82B0133730096AC35 /* Project object */;
 }

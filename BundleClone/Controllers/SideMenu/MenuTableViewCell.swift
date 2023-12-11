@@ -22,7 +22,7 @@ class MenuTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        contentView.backgroundColor = UIColor(red: 17/255, green: 33/255, blue: 45/255, alpha: 1)
+        contentView.backgroundColor = UIColor.setColor(lightColor: .secondarySystemFill, darkColor: UIColor(red: 17/255, green: 33/255, blue: 45/255, alpha: 1))
         contentView.addSubview(newsTypeLabel)
         
         configureConstraints()

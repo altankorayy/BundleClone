@@ -46,7 +46,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         contentView.layer.cornerRadius = 8
         contentView.clipsToBounds = true
         
-        contentView.backgroundColor = UIColor(red: 17/255, green: 33/255, blue: 45/255, alpha: 1)
+        contentView.backgroundColor = UIColor.setColor(lightColor: .secondarySystemFill, darkColor: UIColor(red: 17/255, green: 33/255, blue: 45/255, alpha: 1))
         
         contentView.addSubviews(imageView, sourceLabel, titleLabel)
         

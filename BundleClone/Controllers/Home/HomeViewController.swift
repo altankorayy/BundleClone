@@ -35,8 +35,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = "NEWS"
-        configureInterfaceStyle()
-        
+        view.backgroundColor = UIColor.setColor(lightColor: .white, darkColor: UIColor.bundleColor)
         let collectionView = createCollectionView()
         self.collectionView = collectionView
         view.addSubview(collectionView)
@@ -57,7 +56,7 @@ class HomeViewController: UIViewController {
     private func configureNavigationBar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .done, target: self, action: #selector(didTapSideMenu))
         navigationItem.leftBarButtonItem?.tintColor = .label
-        navigationController?.navigationBar.barTintColor = UIColor.bundleColor
+        navigationController?.navigationBar.barTintColor = UIColor.setColor(lightColor: .white, darkColor: UIColor.bundleColor)
         navigationController?.navigationBar.tintColor = .label
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
     }
@@ -119,14 +118,6 @@ class HomeViewController: UIViewController {
             return createHeaderLayout()
         case .news:
             return createItemLayout()
-        }
-    }
-    
-    private func configureInterfaceStyle() {
-        if UIScreen.darkMode {
-            view.backgroundColor = UIColor.bundleColor
-        } else {
-            view.backgroundColor = .white
         }
     }
     

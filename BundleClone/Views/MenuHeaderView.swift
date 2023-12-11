@@ -48,7 +48,7 @@ class MenuHeaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor(red: 9/255, green: 19/255, blue: 26/255, alpha: 1)
+        backgroundColor = UIColor.setColor(lightColor: .white, darkColor: UIColor.bundleColor)
         addSubviews(bundleLogo, usernameLabel, settingsButton)
         
         settingsButton.addTarget(self, action: #selector(didTapSettingsButton), for: .touchUpInside)

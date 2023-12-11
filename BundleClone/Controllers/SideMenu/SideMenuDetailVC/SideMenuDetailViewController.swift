@@ -25,7 +25,7 @@ class SideMenuDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.bundleColor
+        view.backgroundColor = UIColor.setColor(lightColor: .white, darkColor: UIColor.bundleColor)
         
         let collectionView = createCollectionView()
         self.collectionView = collectionView

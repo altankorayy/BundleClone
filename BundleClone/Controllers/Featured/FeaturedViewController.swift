@@ -18,7 +18,7 @@ class FeaturedViewController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = "FEATURED"
-        configureInterfaceStyle()
+        view.backgroundColor = UIColor.setColor(lightColor: .white, darkColor: UIColor.bundleColor)
         
         let tableView = createTableView()
         self.tableView = tableView
@@ -58,14 +58,6 @@ class FeaturedViewController: UIViewController {
             UIView.animate(withDuration: 0.4) {
                 self?.tableView?.alpha = 1
             }
-        }
-    }
-    
-    private func configureInterfaceStyle() {
-        if UIScreen.darkMode {
-            view.backgroundColor = UIColor.bundleColor
-        } else {
-            view.backgroundColor = .white
         }
     }
     

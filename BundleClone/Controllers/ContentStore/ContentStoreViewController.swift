@@ -23,13 +23,13 @@ class ContentStoreViewController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = "CONTENT STORE"
+        view.backgroundColor = UIColor.setColor(lightColor: .white, darkColor: UIColor.bundleColor)
         
         navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         
         
-        configureInterfaceStyle()
         configureNavigationBar()
         
     }
@@ -37,14 +37,6 @@ class ContentStoreViewController: UIViewController {
     private func configureNavigationBar() {
         navigationController?.navigationBar.tintColor = .label
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
-    }
-
-    private func configureInterfaceStyle() {
-        if UIScreen.darkMode {
-            view.backgroundColor = UIColor.bundleColor
-        } else {
-            view.backgroundColor = .white
-        }
     }
 
 }

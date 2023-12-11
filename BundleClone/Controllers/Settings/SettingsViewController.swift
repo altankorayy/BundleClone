@@ -7,6 +7,7 @@
 
 import UIKit
 import StoreKit
+import CoreData
 
 class SettingsViewController: UIViewController {
     
@@ -73,23 +74,34 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.bundleColor
+        view.backgroundColor = UIColor.setColor(lightColor: .white, darkColor: UIColor.bundleColor)
         view.addSubviews(appSettingsTitle, darkModeLabel, darkModeSwitch, premiumLabel, removeAdsButton, shareTitle, rateAppButton)
         
         darkModeSwitch.addTarget(self, action: #selector(didTapSwitch(_:)), for: .valueChanged)
         removeAdsButton.addTarget(self, action: #selector(didTapRemoveAds), for: .touchUpInside)
         rateAppButton.addTarget(self, action: #selector(didTapRateApp), for: .touchUpInside)
         
+        configureDarkModeSwitch()
+        
         configureConstraints()
+    }
+    
+    private func configureDarkModeSwitch() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
     }
     
     @objc
     private func didTapSwitch(_ sender: UISwitch) {
-        
-        if sender.isOn {
-            print("on")
-        } else {
-            print("off")
+        if #available(iOS 13.0, *) {
+            
+            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+            let appDelegate = windowScene?.windows.first
+            
+            if sender.isOn {
+                appDelegate?.overrideUserInterfaceStyle = .dark
+            } else {
+                appDelegate?.overrideUserInterfaceStyle = .light
+            }
         }
     }
     

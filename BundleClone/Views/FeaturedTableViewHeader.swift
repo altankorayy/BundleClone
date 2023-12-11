@@ -24,7 +24,7 @@ class FeaturedTableViewHeader: UIView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(FeaturedHeaderCollectionViewCell.self, forCellWithReuseIdentifier: FeaturedHeaderCollectionViewCell.identifier)
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.backgroundColor = UIColor.bundleColor
+        collectionView.backgroundColor = UIColor.setColor(lightColor: .white, darkColor: UIColor.bundleColor)
         collectionView.alpha = 0
         return collectionView
     }()
@@ -36,7 +36,7 @@ class FeaturedTableViewHeader: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor.bundleColor
+        backgroundColor = UIColor.setColor(lightColor: .white, darkColor: UIColor.bundleColor)
         
         addSubview(storyCollectionView)
         
