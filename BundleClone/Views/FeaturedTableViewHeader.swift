@@ -15,7 +15,7 @@ class FeaturedTableViewHeader: UIView {
     
     weak var delegate: FeaturedHeaderDelegate?
     
-    private let storyCollectionView: UICollectionView = {
+    public let storyCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: 60, height: 60)
@@ -31,7 +31,7 @@ class FeaturedTableViewHeader: UIView {
     
     private var model: [Article] = []
     
-    private let viewModel = FeaturedTableViewHeaderViewModel()
+    public let viewModel = FeaturedTableViewHeaderViewModel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)

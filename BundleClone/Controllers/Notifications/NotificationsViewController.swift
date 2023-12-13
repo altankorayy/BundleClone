@@ -14,6 +14,8 @@ class NotificationsViewController: UIViewController {
     private let viewModel = NotificationsViewModel()
     
     private var notificationsModel: [Article] = []
+    
+    private var refreshControl: UIRefreshControl?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +31,29 @@ class NotificationsViewController: UIViewController {
         viewModel.delegate = self
         viewModel.fetchNotifications()
         
+        configureRefreshControl()
+        
         configureConstraints()
         
         configureNavigationBar()
+    }
+    
+    private func configureRefreshControl() {
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(didLoadData), for: .valueChanged)
+        self.tableView?.addSubview(refreshControl!)
+    }
+    
+    @objc
+    private func didLoadData() {
+        self.refreshControl?.beginRefreshing()
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.viewModel.fetchNotifications()
+            self?.viewModel.delegate = self
+            self?.tableView?.reloadData()
+            self?.refreshControl?.endRefreshing()
+        }
     }
     
     private func configureNavigationBar() {

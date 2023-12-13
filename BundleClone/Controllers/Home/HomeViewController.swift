@@ -31,6 +31,8 @@ class HomeViewController: UIViewController {
     
     private let viewModel = HomeViewModel()
     
+    private var refreshControl: UIRefreshControl?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,12 +42,35 @@ class HomeViewController: UIViewController {
         self.collectionView = collectionView
         view.addSubview(collectionView)
         
+        viewModel.delegate = self
         viewModel.fetchTechNews()
         viewModel.fetchTopHeadlines()
-        viewModel.delegate = self
+        
+        
+        configureRefreshControl()
         
         configureNavigationBar()
         configureConstraints()
+    }
+    
+    private func configureRefreshControl() {
+        self.refreshControl = UIRefreshControl()
+        self.collectionView?.alwaysBounceVertical = true
+        self.refreshControl?.addTarget(self, action: #selector(didLoadData), for: .valueChanged)
+        self.collectionView?.addSubview(refreshControl!)
+    }
+    
+    @objc
+    private func didLoadData() {
+        self.refreshControl?.beginRefreshing()
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.viewModel.fetchTechNews()
+            self?.viewModel.fetchTopHeadlines()
+            self?.viewModel.delegate = self
+            self?.collectionView?.reloadData()
+            self?.refreshControl?.endRefreshing()
+        }
     }
     
     @objc

@@ -13,6 +13,8 @@ class FeaturedViewController: UIViewController {
     private let viewModel = FeaturedViewModel()
     
     private var model: [Article] = []
+    
+    private var refreshControl: UIRefreshControl?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +28,38 @@ class FeaturedViewController: UIViewController {
         
         viewModel.delegate = self
         viewModel.fetchFeaturedNews()
+        
+        configureRefreshControl()
                 
         configureConstraints()
         
         setHeaderView()
         configureNavigationBar()
         
+    }
+    
+    private func configureRefreshControl() {
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(didLoadData), for: .valueChanged)
+        self.tableView?.addSubview(refreshControl!)
+    }
+    
+    @objc
+    private func didLoadData() {
+        self.refreshControl?.beginRefreshing()
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.viewModel.fetchFeaturedNews()
+            self?.viewModel.delegate = self
+            self?.tableView?.reloadData()
+            
+            let header = FeaturedTableViewHeader()
+            header.delegate = self
+            header.viewModel.fetchStoryNews()
+            header.storyCollectionView.reloadData()
+            
+            self?.refreshControl?.endRefreshing()
+        }
     }
     
     private func configureNavigationBar() {

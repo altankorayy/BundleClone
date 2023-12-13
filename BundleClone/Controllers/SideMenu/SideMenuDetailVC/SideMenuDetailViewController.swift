@@ -12,6 +12,8 @@ class SideMenuDetailViewController: UIViewController {
     private var collectionView: UICollectionView?
     
     private var model: [Article] = []
+    
+    private var refreshControl: UIRefreshControl?
         
     init(model: [Article]) {
         super.init(nibName: nil, bundle: nil)
@@ -32,8 +34,27 @@ class SideMenuDetailViewController: UIViewController {
         view.addSubview(collectionView)
         
         navigationController?.navigationBar.tintColor = .label
+        
+        configureRefreshControl()
                         
         configureConstraints()
+    }
+    
+    private func configureRefreshControl() {
+        self.refreshControl = UIRefreshControl()
+        self.collectionView?.alwaysBounceVertical = true
+        self.refreshControl?.addTarget(self, action: #selector(didLoadData), for: .valueChanged)
+        self.collectionView?.addSubview(refreshControl!)
+    }
+    
+    @objc
+    private func didLoadData() {
+        self.refreshControl?.beginRefreshing()
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView?.reloadData()
+            self?.refreshControl?.endRefreshing()
+        }
     }
     
     private func createCollectionView() -> UICollectionView {
