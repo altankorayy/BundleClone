@@ -24,8 +24,8 @@ class FeaturedViewController: UIViewController {
         self.tableView = tableView
         view.addSubview(tableView)
         
-        viewModel.fetchFeaturedNews()
         viewModel.delegate = self
+        viewModel.fetchFeaturedNews()
                 
         configureConstraints()
         

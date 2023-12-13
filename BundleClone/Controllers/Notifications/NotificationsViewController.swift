@@ -26,8 +26,8 @@ class NotificationsViewController: UIViewController {
         
         view.addSubview(tableView)
         
-        viewModel.fetchNotifications()
         viewModel.delegate = self
+        viewModel.fetchNotifications()
         
         configureConstraints()
         

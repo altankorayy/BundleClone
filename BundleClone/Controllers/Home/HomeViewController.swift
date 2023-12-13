@@ -40,7 +40,7 @@ class HomeViewController: UIViewController {
         self.collectionView = collectionView
         view.addSubview(collectionView)
         
-        viewModel.fetchAppleNews()
+        viewModel.fetchTechNews()
         viewModel.fetchTopHeadlines()
         viewModel.delegate = self
         
@@ -79,25 +79,19 @@ class HomeViewController: UIViewController {
     private func createHeaderLayout() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)))
         item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .absolute(135)), subitems: [item])
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .absolute(UIDevice.isiPhone ? 135 : 200)), subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
         return section
     }
     
     private func createItemLayout() -> NSCollectionLayoutSection {
-        let leftItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1)))
-        leftItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 5)
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(UIDevice.isiPhone ? 0.5 : 0.25), heightDimension: .fractionalHeight(1)))
+        item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
         
-        let rightItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1)))
-        rightItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 5)
-        
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.30)), subitems: [leftItem, rightItem])
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(UIDevice.isiPhone ? 240 : 350)), subitems: UIDevice.isiPhone ? [item, item] : [item, item, item, item])
         
         let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = 10
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0)
-        
         return section
     }
 

@@ -13,7 +13,7 @@ protocol SideMenuModelDelegate: AnyObject {
     func sideMenuGaming(_ model: [Article])
     func sideMenuTech(_ model: [Article])
     func sideMenuPolitics(_ model: [Article])
-    func sideMenuLifestyle(_ model: [Article])
+    func sideMenuFashion(_ model: [Article])
     func sideMenuScience(_ model: [Article])
     func sideMenuCinema(_ model: [Article])
     func sideMenuArts(_ model: [Article])
@@ -99,15 +99,15 @@ class SideMenuDetailViewModel {
         }
     }
     
-    //MARK: -Lifestyle
-    public func fetchLifestyleNews() {
+    //MARK: -Fashion
+    public func fetchFashionNews() {
         
-        let request = APIRequest(endpoint: .lifestyle, query: nil)
+        let request = APIRequest(endpoint: .fashion, query: nil)
         
         APIService.shared.execute(request, expecting: NewsModelResponse.self) { [weak self] result in
             switch result {
             case .success(let model):
-                self?.delegate?.sideMenuLifestyle(model.articles)
+                self?.delegate?.sideMenuFashion(model.articles)
             case .failure(let error):
                 print(error.localizedDescription)
             }

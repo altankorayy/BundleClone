@@ -16,8 +16,8 @@ class HomeViewModel {
     
     weak var delegate: NewsTopHeadlines?
     
-    public func fetchAppleNews() {
-        let request = APIRequest(endpoint: .appleNews, query: nil)
+    public func fetchTechNews() {
+        let request = APIRequest(endpoint: .tech, query: nil)
         
         APIService.shared.execute(request, expecting: NewsModelResponse.self) { [weak self] result in
             switch result {

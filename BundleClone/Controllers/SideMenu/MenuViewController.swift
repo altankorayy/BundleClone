@@ -21,7 +21,7 @@ class MenuViewController: UIViewController {
         case gaming = "GAMING & GEEK"
         case politics = "POLITICS"
         case finance = "BUSINESS & FINANCE"
-        case lifestyle = "LIFESTYLE"
+        case fashion = "FASHION"
         case science = "SCIENCE"
         case sports = "SPORTS"
         case cinema = "CINEMA"
@@ -34,7 +34,7 @@ class MenuViewController: UIViewController {
         case gaming = 2
         case politics = 3
         case finance = 4
-        case lifestyle = 5
+        case fashion = 5
         case science = 6
         case sports = 7
         case cinema = 8
@@ -104,8 +104,8 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configure(headers: MenuOptions.politics.rawValue)
         case Sections.finance.rawValue:
             cell.configure(headers: MenuOptions.finance.rawValue)
-        case Sections.lifestyle.rawValue:
-            cell.configure(headers: MenuOptions.lifestyle.rawValue)
+        case Sections.fashion.rawValue:
+            cell.configure(headers: MenuOptions.fashion.rawValue)
         case Sections.science.rawValue:
             cell.configure(headers: MenuOptions.science.rawValue)
         case Sections.cinema.rawValue:
@@ -135,8 +135,8 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             delegate?.didSelect(menuItem: MenuOptions.politics)
         case Sections.finance.rawValue:
             delegate?.didSelect(menuItem: MenuOptions.finance)
-        case Sections.lifestyle.rawValue:
-            delegate?.didSelect(menuItem: MenuOptions.lifestyle)
+        case Sections.fashion.rawValue:
+            delegate?.didSelect(menuItem: MenuOptions.fashion)
         case Sections.science.rawValue:
             delegate?.didSelect(menuItem: MenuOptions.science)
         case Sections.cinema.rawValue:
@@ -149,7 +149,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return UIDevice.isiPhone ? 60 : 100
     }
     
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {

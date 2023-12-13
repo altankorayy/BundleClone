@@ -23,8 +23,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     private let sourceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 10, weight: .bold)
-        label.textAlignment = .left
+        label.font = .systemFont(ofSize: UIDevice.isiPhone ? 10 : 18, weight: .bold)
         label.textColor = .label
         label.numberOfLines = 0
         return label
@@ -33,7 +32,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 16, weight: .regular)
+        label.font = .systemFont(ofSize: UIDevice.isiPhone ? 16 : 23, weight: .regular)
         label.textAlignment = .left
         label.textColor = .label
         label.numberOfLines = 0
@@ -88,16 +87,15 @@ class HomeCollectionViewCell: UICollectionViewCell {
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.leftAnchor.constraint(equalTo: leftAnchor),
             imageView.rightAnchor.constraint(equalTo: rightAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: 80),
+            imageView.heightAnchor.constraint(equalToConstant: UIDevice.isiPhone ? 80 : 130),
             
             sourceLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 5),
             sourceLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
-            sourceLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -3),
+            sourceLabel.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -5),
             
             titleLabel.topAnchor.constraint(equalTo: sourceLabel.bottomAnchor, constant: 5),
             titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 3),
             titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -3),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6)
         ])
     }
 }

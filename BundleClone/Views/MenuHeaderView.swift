@@ -17,7 +17,7 @@ class MenuHeaderView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 20
+        imageView.layer.cornerRadius = UIDevice.isiPhone ? 20 : 30
         imageView.clipsToBounds = true
         imageView.image = UIImage(named: "bundleLogo")
         return imageView
@@ -27,7 +27,7 @@ class MenuHeaderView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .label
-        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.font = .systemFont(ofSize: UIDevice.isiPhone ? 15 : 19, weight: .regular)
         label.text = "Bundle User"
         return label
     }()
@@ -81,8 +81,8 @@ class MenuHeaderView: UIView {
         NSLayoutConstraint.activate([
             bundleLogo.topAnchor.constraint(equalTo: topAnchor, constant: 15),
             bundleLogo.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
-            bundleLogo.heightAnchor.constraint(equalToConstant: 40),
-            bundleLogo.widthAnchor.constraint(equalToConstant: 40),
+            bundleLogo.heightAnchor.constraint(equalToConstant: UIDevice.isiPhone ? 40 : 60),
+            bundleLogo.widthAnchor.constraint(equalToConstant: UIDevice.isiPhone ? 40 : 60),
             
             usernameLabel.centerYAnchor.constraint(equalTo: bundleLogo.centerYAnchor),
             usernameLabel.leftAnchor.constraint(equalTo: bundleLogo.rightAnchor, constant: 15),

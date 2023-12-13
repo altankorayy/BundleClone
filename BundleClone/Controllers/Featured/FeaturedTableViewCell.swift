@@ -23,7 +23,7 @@ class FeaturedTableViewCell: UITableViewCell {
     private let sourceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 10, weight: .bold)
+        label.font = .systemFont(ofSize: UIDevice.isiPhone ? 10 : 16, weight: .bold)
         label.textColor = .label
         label.numberOfLines = 0
         return label
@@ -32,7 +32,7 @@ class FeaturedTableViewCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.font = .systemFont(ofSize: UIDevice.isiPhone ? 18 : 22, weight: .bold)
         label.textAlignment = .left
         label.textColor = .label
         label.numberOfLines = 0
@@ -83,8 +83,8 @@ class FeaturedTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             newsImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             newsImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -5),
-            newsImageView.heightAnchor.constraint(equalToConstant: 100),
-            newsImageView.widthAnchor.constraint(equalToConstant: 100),
+            newsImageView.heightAnchor.constraint(equalToConstant: UIDevice.isiPhone ? 100 : 130),
+            newsImageView.widthAnchor.constraint(equalToConstant: UIDevice.isiPhone ? 100 : 130),
             
             sourceLabel.topAnchor.constraint(equalTo: newsImageView.topAnchor),
             sourceLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),

@@ -20,7 +20,7 @@ class DetailsViewController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 22, weight: .bold)
+        label.font = .systemFont(ofSize: UIDevice.isiPhone ? 22 : 27, weight: .bold)
         label.textColor = .label
         label.numberOfLines = 0
         return label
@@ -29,7 +29,7 @@ class DetailsViewController: UIViewController {
     private let sourceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 13, weight: .semibold)
+        label.font = .systemFont(ofSize: UIDevice.isiPhone ? 13 : 19, weight: .semibold)
         label.textColor = .secondaryLabel
         label.numberOfLines = 0
         return label
@@ -38,7 +38,7 @@ class DetailsViewController: UIViewController {
     private let dateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 13, weight: .semibold)
+        label.font = .systemFont(ofSize: UIDevice.isiPhone ? 13 : 19, weight: .semibold)
         label.textColor = .secondaryLabel
         label.numberOfLines = 0
         return label
@@ -47,7 +47,7 @@ class DetailsViewController: UIViewController {
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 17, weight: .regular)
+        label.font = .systemFont(ofSize: UIDevice.isiPhone ? 17 : 23, weight: .regular)
         label.textColor = .label
         label.numberOfLines = 0
         return label
@@ -58,9 +58,9 @@ class DetailsViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("GO TO WEBSIDE", for: .normal)
         button.setTitleColor(UIColor.label, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 13, weight: .regular)
+        button.titleLabel?.font = .systemFont(ofSize: UIDevice.isiPhone ? 13 : 18, weight: .regular)
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.setColor(lightColor: UIColor.black, darkColor: UIColor.white).cgColor
+        button.layer.borderColor = UIColor.label.cgColor
         return button
     }()
     
@@ -177,7 +177,7 @@ class DetailsViewController: UIViewController {
             
             imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 4),
             imageView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: 175),
+            imageView.heightAnchor.constraint(equalToConstant: UIDevice.isiPhone ? 175 : 420),
             
             titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 30),
             titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
@@ -195,8 +195,8 @@ class DetailsViewController: UIViewController {
             
             websideButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 30),
             websideButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
-            websideButton.widthAnchor.constraint(equalToConstant: 120),
-            websideButton.heightAnchor.constraint(equalToConstant: 35)
+            websideButton.widthAnchor.constraint(equalToConstant: UIDevice.isiPhone ? 120 : 160),
+            websideButton.heightAnchor.constraint(equalToConstant: UIDevice.isiPhone ? 35 : 55)
         ])
     }
 

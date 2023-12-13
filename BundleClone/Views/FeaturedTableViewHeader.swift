@@ -43,8 +43,8 @@ class FeaturedTableViewHeader: UIView {
         storyCollectionView.delegate = self
         storyCollectionView.dataSource = self
         
-        viewModel.fetchStoryNews()
         viewModel.delegate = self
+        viewModel.fetchStoryNews()
         
         configureConstraints()
     }

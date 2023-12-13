@@ -18,7 +18,7 @@ enum APIEndpoint: String, CaseIterable, Hashable {
     case gaming = "everything?q=gaming"
     case tech = "everything?q=technology"
     case politics = "everything?q=politics"
-    case lifestyle = "everything?q=lifetyle"
+    case fashion = "everything?q=fashion"
     case cinema = "everything?q=cinema"
     case arts = "everything?q=arts"
 }

@@ -14,7 +14,7 @@ class NotificationsTableViewCell: UITableViewCell {
     private let hourLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 22, weight: .heavy)
+        label.font = .systemFont(ofSize: UIDevice.isiPhone ? 22 : 26, weight: .heavy)
         label.textColor = .secondaryLabel
         label.numberOfLines = 0
         return label
@@ -23,7 +23,7 @@ class NotificationsTableViewCell: UITableViewCell {
     private let sourceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 12, weight: .regular)
+        label.font = .systemFont(ofSize: UIDevice.isiPhone ? 12 : 16, weight: .regular)
         label.textColor = .secondaryLabel
         return label
     }()
@@ -31,7 +31,7 @@ class NotificationsTableViewCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 15, weight: .bold)
+        label.font = .systemFont(ofSize: UIDevice.isiPhone ? 15 : 19, weight: .bold)
         label.textColor = .label
         label.numberOfLines = 0
         return label
@@ -40,7 +40,7 @@ class NotificationsTableViewCell: UITableViewCell {
     private let dateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 12, weight: .regular)
+        label.font = .systemFont(ofSize: UIDevice.isiPhone ? 12 : 16, weight: .regular)
         label.textColor = .secondaryLabel
         return label
     }()
@@ -95,8 +95,8 @@ class NotificationsTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             hourLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15),
             hourLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
-            hourLabel.heightAnchor.constraint(equalToConstant: 60),
-            hourLabel.widthAnchor.constraint(equalToConstant: 40),
+            hourLabel.heightAnchor.constraint(equalToConstant: UIDevice.isiPhone ? 60 : 80),
+            hourLabel.widthAnchor.constraint(equalToConstant: UIDevice.isiPhone ? 40 : 50),
             
             sourceLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15),
             sourceLabel.leftAnchor.constraint(equalTo: hourLabel.rightAnchor, constant: 15),

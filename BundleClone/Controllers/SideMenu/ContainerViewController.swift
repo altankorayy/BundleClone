@@ -30,8 +30,10 @@ class ContainerViewController: UIViewController {
     private var financeModel: [Article] = []
     private var scienceModel: [Article] = []
     private var politicsModel: [Article] = []
-    private var lifestyleModel: [Article] = []
+    private var fashionModel: [Article] = []
     private var topHeadlinesModel: [Article] = []
+    
+    var selectedTitle: String = ""
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +48,7 @@ class ContainerViewController: UIViewController {
         sideMenuViewModel.fetchFinanceNews()
         sideMenuViewModel.fetchScienceNews()
         sideMenuViewModel.fetchPoliticsNews()
-        sideMenuViewModel.fetchLifestyleNews()
+        sideMenuViewModel.fetchFashionNews()
         sideMenuViewModel.fetchTopHeadlinesNews()
         
         sideMenuViewModel.delegate = self
@@ -84,7 +86,7 @@ extension ContainerViewController: HomeViewControllerDelegate {
             headerView.hiddenState(with: true)
             
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut) {
-                self.navVC?.view.frame.origin.x = self.homeVC.view.frame.size.width - 100
+                self.navVC?.view.frame.origin.x = self.homeVC.view.frame.size.width - (UIDevice.isiPhone ? 100 : 500)
             } completion: { [weak self] done in
                 if done {
                     self?.menuState = .opened
@@ -115,35 +117,36 @@ extension ContainerViewController: MenuViewControllerDelegate {
         toggleMenu { [weak self] in
             switch menuItem {
             case .all:
-                self?.addItems(viewController: SideMenuDetailViewController(model: self?.topHeadlinesModel ?? []))
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.topHeadlinesModel ?? []), title: "ALL")
             case .tech:
-                self?.addItems(viewController: SideMenuDetailViewController(model: self?.techModel ?? []))
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.techModel ?? []), title: "TECHNOLOGY")
             case .gaming:
-                self?.addItems(viewController: SideMenuDetailViewController(model: self?.gamingModel ?? []))
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.gamingModel ?? []), title: "GAMING & GEEK")
             case .politics:
-                self?.addItems(viewController: SideMenuDetailViewController(model: self?.politicsModel ?? []))
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.politicsModel ?? []), title: "POLITICS")
             case .finance:
-                self?.addItems(viewController: SideMenuDetailViewController(model: self?.financeModel ?? []))
-            case .lifestyle:
-                self?.addItems(viewController: SideMenuDetailViewController(model: self?.lifestyleModel ?? []))
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.financeModel ?? []), title: "BUSSINESS & FINANCE")
+            case .fashion:
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.fashionModel ?? []), title: "FASHION")
             case .science:
-                self?.addItems(viewController: SideMenuDetailViewController(model: self?.scienceModel ?? []))
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.scienceModel ?? []), title: "SCINCE")
             case .sports:
-                self?.addItems(viewController: SideMenuDetailViewController(model: self?.sportsModel ?? []))
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.sportsModel ?? []), title: "SPORTS")
             case .cinema:
-                self?.addItems(viewController: SideMenuDetailViewController(model: self?.cinemaModel ?? []))
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.cinemaModel ?? []), title: "CINEMA")
             case .arts:
-                self?.addItems(viewController: SideMenuDetailViewController(model: self?.artsModel ?? []))
+                self?.addItems(viewController: SideMenuDetailViewController(model: self?.artsModel ?? []), title: "ARTS & CULTURE")
             }
         }
     }
     
-    func addItems(viewController: UIViewController) {
+    func addItems(viewController: UIViewController, title: String) {
         let vc = viewController
         homeVC.addChild(vc)
         homeVC.view.addSubview(vc.view)
         vc.view.frame = view.frame
         vc.didMove(toParent: homeVC)
+        homeVC.title = title
     }
 }
 
@@ -172,8 +175,8 @@ extension ContainerViewController: SideMenuModelDelegate {
         self.politicsModel = model
     }
     
-    func sideMenuLifestyle(_ model: [Article]) {
-        self.lifestyleModel = model
+    func sideMenuFashion(_ model: [Article]) {
+        self.fashionModel = model
     }
     
     func sideMenuScience(_ model: [Article]) {
