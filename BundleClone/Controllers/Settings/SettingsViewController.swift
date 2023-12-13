@@ -87,7 +87,7 @@ class SettingsViewController: UIViewController {
     }
     
     private func configureDarkModeSwitch() {
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+        // guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
     }
     
     @objc

@@ -12,7 +12,7 @@ class SideMenuDetailViewController: UIViewController {
     private var collectionView: UICollectionView?
     
     private var model: [Article] = []
-    
+        
     init(model: [Article]) {
         super.init(nibName: nil, bundle: nil)
         self.model = model
@@ -32,7 +32,7 @@ class SideMenuDetailViewController: UIViewController {
         view.addSubview(collectionView)
         
         navigationController?.navigationBar.tintColor = .label
-                
+                        
         configureConstraints()
     }
     

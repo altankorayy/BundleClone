@@ -32,7 +32,7 @@ class ContainerViewController: UIViewController {
     private var politicsModel: [Article] = []
     private var lifestyleModel: [Article] = []
     private var topHeadlinesModel: [Article] = []
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -144,7 +144,6 @@ extension ContainerViewController: MenuViewControllerDelegate {
         homeVC.view.addSubview(vc.view)
         vc.view.frame = view.frame
         vc.didMove(toParent: homeVC)
-        homeVC.title = viewController.title
     }
 }
 
