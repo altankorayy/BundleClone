@@ -81,6 +81,8 @@ class SettingsViewController: UIViewController {
         removeAdsButton.addTarget(self, action: #selector(didTapRemoveAds), for: .touchUpInside)
         rateAppButton.addTarget(self, action: #selector(didTapRateApp), for: .touchUpInside)
         
+        view.accessibilityIdentifier = "SettingsViewController"
+        
         configureDarkModeSwitch()
         
         configureConstraints()

@@ -11,8 +11,7 @@ class APIRequest {
     
     struct Constants {
         static let baseUrl = "https://newsapi.org/v2"
-        static let oldApiKey = "446190b3c206471a90dce632251cdff2"
-        static let apiKey = "bf349f72fbb84bbc961411acb7303454"
+        static let apiKey = "13db935e5efa423bb441b050f1b52826"
     }
     
     let endpoint: APIEndpoint

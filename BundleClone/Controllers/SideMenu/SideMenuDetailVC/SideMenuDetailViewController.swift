@@ -35,6 +35,8 @@ class SideMenuDetailViewController: UIViewController {
         
         navigationController?.navigationBar.tintColor = .label
         
+        view.accessibilityIdentifier = "SideMenuDetailViewController"
+        
         configureRefreshControl()
                         
         configureConstraints()

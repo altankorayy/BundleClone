@@ -31,6 +31,8 @@ class WebViewViewController: UIViewController {
         view.addSubviews(webView, progressView)
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         configureConstraints()
+        
+        view.accessibilityIdentifier = "WebViewViewController"
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {

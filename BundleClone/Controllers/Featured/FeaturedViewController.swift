@@ -26,8 +26,8 @@ class FeaturedViewController: UIViewController {
         self.tableView = tableView
         view.addSubview(tableView)
         
-        viewModel.delegate = self
         viewModel.fetchFeaturedNews()
+        viewModel.delegate = self
         
         configureRefreshControl()
                 
