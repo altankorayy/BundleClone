@@ -24,6 +24,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = tabBar
         self.window = window
         window.makeKeyAndVisible()
+        
+        if let savedTheme = UserDefaults.standard.value(forKey: "appTheme") as? String {
+            if savedTheme == "dark" {
+                applyDarkMode()
+            } else {
+                applyLightMode()
+            }
+        }
+    }
+    
+    private func applyDarkMode() {
+        if #available(iOS 13.0, *) {
+            window?.overrideUserInterfaceStyle = .dark
+        }
+    }
+    
+    private func applyLightMode() {
+        if #available(iOS 13.0, *) {
+            window?.overrideUserInterfaceStyle = .light
+        }
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

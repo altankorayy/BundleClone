@@ -84,12 +84,16 @@ class SettingsViewController: UIViewController {
         view.accessibilityIdentifier = "SettingsViewController"
         
         configureDarkModeSwitch()
-        
+                
         configureConstraints()
     }
     
     private func configureDarkModeSwitch() {
-        // guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+        if traitCollection.userInterfaceStyle == .dark {
+            darkModeSwitch.isOn = true
+        } else {
+            darkModeSwitch.isOn = false
+        }
     }
     
     @objc
@@ -101,8 +105,10 @@ class SettingsViewController: UIViewController {
             
             if sender.isOn {
                 appDelegate?.overrideUserInterfaceStyle = .dark
+                UserDefaults.standard.setValue("dark", forKey: "appTheme")
             } else {
                 appDelegate?.overrideUserInterfaceStyle = .light
+                UserDefaults.standard.setValue("light", forKey: "appTheme")
             }
         }
     }

@@ -29,7 +29,7 @@ class APICacheManager {
         targetCache.setObject(data as NSData, forKey: key)
     }
     
-    private func setupCache() {
+    public func setupCache() {
         APIEndpoint.allCases.forEach({ endpoint in
             cacheDictionary[endpoint] = NSCache<NSString, NSData>()
         })

@@ -22,7 +22,11 @@ final class BundleCloneUITests: XCTestCase {
         let webViewViewController = app.otherElements["WebViewViewController"]
         
         sideMenuButton.tap()
+        XCTAssertTrue(sideMenuButton.exists)
+        
         techSectionCell.tap()
+        XCTAssertTrue(techSectionCell.exists)
+        
         XCTAssertTrue(collectionView.exists)
         
         firstCollectionViewCell.tap()
@@ -46,6 +50,7 @@ final class BundleCloneUITests: XCTestCase {
         let webViewViewController = app.otherElements["WebViewViewController"]
         
         sideMenuButton.tap()
+        XCTAssertTrue(sideMenuButton.exists)
         gamingSectionCell.tap()
         XCTAssertTrue(collectionView.exists)
         
@@ -69,6 +74,7 @@ final class BundleCloneUITests: XCTestCase {
         let webViewViewController = app.otherElements["WebViewViewController"]
         
         sideMenuButton.tap()
+        XCTAssertTrue(sideMenuButton.exists)
         politicsSectionCell.tap()
         XCTAssertTrue(collectionView.exists, "CollectionView is not present on the new page")
                 
@@ -84,6 +90,7 @@ final class BundleCloneUITests: XCTestCase {
         app.launch()
         
         let sideMenuButton = app.navigationBars["NEWS"].buttons["List"]
+        XCTAssertTrue(sideMenuButton.exists)
         let politicsSectionCell = app.tables.cells.containing(.staticText, identifier:"BUSINESS & FINANCE").children(matching: .other).element(boundBy: 0)
         let collectionView = app.collectionViews.firstMatch
         let firstCollectionViewCell = app.collectionViews.cells.element(boundBy: 0)
@@ -115,6 +122,7 @@ final class BundleCloneUITests: XCTestCase {
         let webViewViewController = app.otherElements["WebViewViewController"]
         
         sideMenuButton.tap()
+        XCTAssertTrue(sideMenuButton.exists)
         politicsSectionCell.tap()
         XCTAssertTrue(collectionView.exists, "CollectionView is not present on the new page")
                 
@@ -140,6 +148,7 @@ final class BundleCloneUITests: XCTestCase {
         let webViewViewController = app.otherElements["WebViewViewController"]
                 
         sideMenuButton.tap()
+        XCTAssertTrue(sideMenuButton.exists)
         tableView.swipeUp()
         scienceSectionCell.tap()
         XCTAssertTrue(collectionView.exists, "CollectionView is not present on the new page")
@@ -166,6 +175,7 @@ final class BundleCloneUITests: XCTestCase {
         let webViewViewController = app.otherElements["WebViewViewController"]
                 
         sideMenuButton.tap()
+        XCTAssertTrue(sideMenuButton.exists)
         tableView.swipeUp()
         sportsSectionCell.tap()
         
@@ -193,6 +203,7 @@ final class BundleCloneUITests: XCTestCase {
         let webViewViewController = app.otherElements["WebViewViewController"]
         
         sideMenuButton.tap()
+        XCTAssertTrue(sideMenuButton.exists)
         tableView.swipeUp()
         cinemaSectionCell.tap()
         
@@ -220,6 +231,7 @@ final class BundleCloneUITests: XCTestCase {
         let webViewViewController = app.otherElements["WebViewViewController"]
         
         sideMenuButton.tap()
+        XCTAssertTrue(sideMenuButton.exists)
         tableView.swipeUp()
         artsSectionCell.tap()
         
@@ -319,7 +331,9 @@ final class BundleCloneUITests: XCTestCase {
         let settingsViewConttroller = app.otherElements["SettingsViewController"]
         
         sideMenuButton.tap()
+        XCTAssertTrue(sideMenuButton.exists)
         settingsButton.tap()
+        XCTAssertTrue(settingsButton.exists)
         
         XCTAssertTrue(settingsViewConttroller.exists)
     }
