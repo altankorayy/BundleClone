@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1052DC62B2F500800253A6C /* HomeVCNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1052DC52B2F500800253A6C /* HomeVCNavigationBarView.swift */; };
+		E1052DC82B2F55D800253A6C /* HomeVCNavigationBarViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1052DC72B2F55D800253A6C /* HomeVCNavigationBarViewCollectionViewCell.swift */; };
+		E1052DCA2B2F678000253A6C /* RemoveAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1052DC92B2F678000253A6C /* RemoveAdsViewController.swift */; };
 		E1100CA62B2494310030C5CB /* SideMenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1100CA52B2494300030C5CB /* SideMenuDetailViewController.swift */; };
 		E1100CA82B249A3D0030C5CB /* SideMenuDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1100CA72B249A3D0030C5CB /* SideMenuDetailViewModel.swift */; };
 		E13E293D2B192654007CBC21 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13E293C2B192654007CBC21 /* WebViewViewController.swift */; };
@@ -46,7 +49,6 @@
 		E1A44FF72B0133740096AC35 /* BundleCloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A44FF62B0133740096AC35 /* BundleCloneUITestsLaunchTests.swift */; };
 		E1B07B712B24C683005B840E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B07B702B24C683005B840E /* SettingsViewController.swift */; };
 		E1E52BBB2B178FF700077484 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E52BBA2B178FF700077484 /* DetailsViewController.swift */; };
-		E1F7C9FE2B27347400088C19 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1F7C9FC2B27347400088C19 /* CoreData.xcdatamodeld */; };
 		E1F7CA042B2751F200088C19 /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F7CA032B2751F200088C19 /* DataPersistanceManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E1052DC52B2F500800253A6C /* HomeVCNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCNavigationBarView.swift; sourceTree = "<group>"; };
+		E1052DC72B2F55D800253A6C /* HomeVCNavigationBarViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCNavigationBarViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		E1052DC92B2F678000253A6C /* RemoveAdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAdsViewController.swift; sourceTree = "<group>"; };
 		E1100CA52B2494300030C5CB /* SideMenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuDetailViewController.swift; sourceTree = "<group>"; };
 		E1100CA72B249A3D0030C5CB /* SideMenuDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuDetailViewModel.swift; sourceTree = "<group>"; };
 		E13E293C2B192654007CBC21 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +116,6 @@
 		E1A44FF62B0133740096AC35 /* BundleCloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleCloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E1B07B702B24C683005B840E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E1E52BBA2B178FF700077484 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
-		E1F7C9FD2B27347400088C19 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		E1F7CA032B2751F200088C19 /* DataPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +175,7 @@
 			children = (
 				E16FE1BF2B0136B300677464 /* HomeViewController.swift */,
 				E14C2ADD2B0146E700A57A78 /* HomeCollectionViewCell.swift */,
+				E1052DC72B2F55D800253A6C /* HomeVCNavigationBarViewCollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 			children = (
 				E1884C292B14F75C0064E190 /* MenuHeaderView.swift */,
 				E17F6A132B02A79A005136F3 /* FeaturedTableViewHeader.swift */,
+				E1052DC52B2F500800253A6C /* HomeVCNavigationBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -237,7 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				E1A44FD22B0133730096AC35 /* BundleClone */,
-				E1F7C9FC2B27347400088C19 /* CoreData.xcdatamodeld */,
 				E1A44FE92B0133740096AC35 /* BundleCloneTests */,
 				E1A44FF32B0133740096AC35 /* BundleCloneUITests */,
 				E1A44FD12B0133730096AC35 /* Products */,
@@ -355,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				E1B07B702B24C683005B840E /* SettingsViewController.swift */,
+				E1052DC92B2F678000253A6C /* RemoveAdsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -515,16 +521,18 @@
 				E17F6A112B02994B005136F3 /* FeaturedTableViewCell.swift in Sources */,
 				E14C2AD82B0143D400A57A78 /* NotificationsViewModel.swift in Sources */,
 				E17F6A142B02A79A005136F3 /* FeaturedTableViewHeader.swift in Sources */,
+				E1052DC82B2F55D800253A6C /* HomeVCNavigationBarViewCollectionViewCell.swift in Sources */,
 				E14C2AD42B0143A900A57A78 /* FeaturedViewModel.swift in Sources */,
 				E1100CA82B249A3D0030C5CB /* SideMenuDetailViewModel.swift in Sources */,
 				E1A44FD62B0133730096AC35 /* SceneDelegate.swift in Sources */,
 				E17F6A0F2B029042005136F3 /* Extensions.swift in Sources */,
+				E1052DC62B2F500800253A6C /* HomeVCNavigationBarView.swift in Sources */,
 				E1884C242B14A2D00064E190 /* ContainerViewController.swift in Sources */,
 				E1884C2A2B14F75C0064E190 /* MenuHeaderView.swift in Sources */,
 				E14601912B13750C00FEEF3E /* ImageLoader.swift in Sources */,
 				E15CA9622B0FBFDB00884139 /* NewsModel.swift in Sources */,
 				E16FE1C02B0136B300677464 /* HomeViewController.swift in Sources */,
-				E1F7C9FE2B27347400088C19 /* CoreData.xcdatamodeld in Sources */,
+				E1052DCA2B2F678000253A6C /* RemoveAdsViewController.swift in Sources */,
 				E165CB7D2B17599B001AF30E /* FeaturedHeaderCollectionViewCell.swift in Sources */,
 				E16FE1C62B0136E500677464 /* NotificationsViewController.swift in Sources */,
 				E1B07B712B24C683005B840E /* SettingsViewController.swift in Sources */,
@@ -869,19 +877,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		E1F7C9FC2B27347400088C19 /* CoreData.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E1F7C9FD2B27347400088C19 /* CoreData.xcdatamodel */,
-			);
-			currentVersion = E1F7C9FD2B27347400088C19 /* CoreData.xcdatamodel */;
-			path = CoreData.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = E1A44FC82B0133730096AC35 /* Project object */;
 }

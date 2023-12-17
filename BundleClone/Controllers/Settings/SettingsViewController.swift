@@ -115,7 +115,8 @@ class SettingsViewController: UIViewController {
     
     @objc
     private func didTapRemoveAds() {
-        print("Ads Removed")
+        let removeAdsVC = RemoveAdsViewController()
+        present(removeAdsVC, animated: true)
     }
     
     @objc

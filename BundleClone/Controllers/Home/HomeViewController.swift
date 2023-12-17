@@ -33,10 +33,11 @@ class HomeViewController: UIViewController {
     
     private var refreshControl: UIRefreshControl?
     
+    let navigationBarView = HomeVCNavigationBarView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "NEWS"
         view.backgroundColor = UIColor.setColor(lightColor: .white, darkColor: UIColor.bundleColor)
         let collectionView = createCollectionView()
         self.collectionView = collectionView
@@ -46,6 +47,14 @@ class HomeViewController: UIViewController {
         viewModel.fetchTechNews()
         viewModel.fetchTopHeadlines()
         
+        if let navigationBar = self.navigationController?.navigationBar {
+            navigationBar.addSubview(navigationBarView)
+            
+            navigationBarView.leftAnchor.constraint(equalTo: navigationBar.leftAnchor, constant: 50).isActive = true
+            navigationBarView.rightAnchor.constraint(equalTo: navigationBar.rightAnchor, constant: -20).isActive = true
+            navigationBarView.topAnchor.constraint(equalTo: navigationBar.topAnchor).isActive = true
+            navigationBarView.bottomAnchor.constraint(equalTo: navigationBar.bottomAnchor).isActive = true
+        }
         
         configureRefreshControl()
         
@@ -193,12 +202,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             DispatchQueue.main.async { [weak self] in
                 let detailVC = DetailsViewController()
                 detailVC.configure(with: headerModel)
+                self?.navigationBarView.isHidden = true
                 self?.navigationController?.pushViewController(detailVC, animated: true)
             }
         case .news:
             DispatchQueue.main.async { [weak self] in
                 let detailVC = DetailsViewController()
                 detailVC.configure(with: topHeadlinesModel)
+                self?.navigationBarView.isHidden = true
                 self?.navigationController?.pushViewController(detailVC, animated: true)
             }
         }
