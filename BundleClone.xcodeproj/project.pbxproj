@@ -101,6 +101,7 @@
 		E1884C252B14A2F40064E190 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		E1884C272B14AF7E0064E190 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		E1884C292B14F75C0064E190 /* MenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderView.swift; sourceTree = "<group>"; };
+		E18BC4EF2B305B1200BE419D /* Configureation.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configureation.storekit; sourceTree = "<group>"; };
 		E19C21282B207EA500A8D5DA /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		E1A44FD02B0133730096AC35 /* BundleClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BundleClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A44FD32B0133730096AC35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -361,6 +362,7 @@
 			children = (
 				E1B07B702B24C683005B840E /* SettingsViewController.swift */,
 				E1052DC92B2F678000253A6C /* RemoveAdsViewController.swift */,
+				E18BC4EF2B305B1200BE419D /* Configureation.storekit */,
 			);
 			path = Settings;
 			sourceTree = "<group>";

@@ -6,8 +6,14 @@
 //
 
 import UIKit
+import StoreKit
 
 class RemoveAdsViewController: UIViewController {
+    
+    enum Product: String, CaseIterable {
+        case month = "com.altankoray.month"
+        case year = "com.altankoray.year"
+    }
     
     private let welcomeLabel: UILabel = {
         let label = UILabel()
@@ -71,16 +77,57 @@ class RemoveAdsViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         return button
     }()
+    
+    private let monthlyPurchaseButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("₺12,99 / Month", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.backgroundColor = UIColor.red
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        return button
+    }()
+    
+    private let yearPurchaseButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("₺129,99 / Year", for: .normal)
+        button.setTitleColor(UIColor.label, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.red.cgColor
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.setColor(lightColor: .white, darkColor: UIColor.bundleColor)
-        view.addSubviews(welcomeLabel, premiumLabel, premiumImage, addfreeLabel, descriptionLabel, detailsButton)
+        view.addSubviews(welcomeLabel, premiumLabel, premiumImage, addfreeLabel, descriptionLabel, detailsButton, monthlyPurchaseButton, yearPurchaseButton)
         
         detailsButton.addTarget(self, action: #selector(didTapDetailsButton), for: .touchUpInside)
-        
+        monthlyPurchaseButton.addTarget(self, action: #selector(didTapMonthlyPurchase), for: .touchUpInside)
+        yearPurchaseButton.addTarget(self, action: #selector(didTapYearPurchase), for: .touchUpInside)
+                
         configureConstraints()
+    }
+    
+    @objc
+    private func didTapYearPurchase() {
+        let setProduct: Set<String> = [Product.year.rawValue]
+        let productRequest = SKProductsRequest(productIdentifiers: setProduct)
+        productRequest.delegate = self
+        productRequest.start()
+    }
+    
+    @objc
+    private func didTapMonthlyPurchase() {
+        if SKPaymentQueue.canMakePayments() {
+            let setProduct: Set<String> = [Product.month.rawValue]
+            let productRequest = SKProductsRequest(productIdentifiers: setProduct)
+            productRequest.delegate = self
+            productRequest.start()
+        }
     }
     
     @objc
@@ -97,7 +144,6 @@ class RemoveAdsViewController: UIViewController {
         
         present(alert, animated: true)
     }
-    
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             welcomeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -120,7 +166,51 @@ class RemoveAdsViewController: UIViewController {
             
             detailsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             detailsButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 5),
+            
+            monthlyPurchaseButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70),
+            monthlyPurchaseButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
+            monthlyPurchaseButton.heightAnchor.constraint(equalToConstant: 45),
+            monthlyPurchaseButton.widthAnchor.constraint(equalToConstant: 150),
+            
+            yearPurchaseButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70),
+            yearPurchaseButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30),
+            yearPurchaseButton.heightAnchor.constraint(equalToConstant: 45),
+            yearPurchaseButton.widthAnchor.constraint(equalToConstant: 160)
         ])
     }
 
+}
+
+extension RemoveAdsViewController: SKProductsRequestDelegate, SKPaymentTransactionObserver {
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        if let product = response.products.first {
+            self.purchase(product: product)
+        }
+        
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction in transactions {
+            switch transaction.transactionState {
+            case .purchasing:
+                print("Purchasing product...")
+            case .purchased:
+                SKPaymentQueue.default().finishTransaction(transaction)
+            case .failed:
+                SKPaymentQueue.default().finishTransaction(transaction)
+            case .restored:
+                print("Restore product")
+            case .deferred:
+                print("Deferred")
+            default:
+                break
+            }
+        }
+    }
+    
+    func purchase(product: SKProduct) {
+        let payment = SKPayment(product: product)
+        SKPaymentQueue.default().add(self)
+        SKPaymentQueue.default().add(payment)
+    }
 }
