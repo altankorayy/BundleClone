@@ -94,7 +94,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
             sourceLabel.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -5),
             
             titleLabel.topAnchor.constraint(equalTo: sourceLabel.bottomAnchor, constant: 5),
-            titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 3),
+            titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: UIDevice.isiPhone ? 5 : 10),
             titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -3),
         ])
     }

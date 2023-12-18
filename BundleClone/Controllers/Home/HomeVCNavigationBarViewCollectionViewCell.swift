@@ -14,9 +14,8 @@ class HomeVCNavigationBarViewCollectionViewCell: UICollectionViewCell {
     private let titleButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("All", for: .normal)
         button.setTitleColor(UIColor.secondaryLabel, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: UIDevice.isiPhone ? 17 : 20, weight: .semibold)
         button.titleLabel?.textAlignment = .left
         return button
     }()
@@ -24,7 +23,7 @@ class HomeVCNavigationBarViewCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        contentView.backgroundColor = UIColor.setColor(lightColor: .white, darkColor: UIColor.bundleColor)
+        contentView.backgroundColor = UIColor.clear
         contentView.addSubviews(titleButton)
         
         configureConstraints()

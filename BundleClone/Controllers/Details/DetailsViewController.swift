@@ -162,10 +162,10 @@ class DetailsViewController: UIViewController {
         guard let url = model.urlToImage else { return }
         guard let urlString = URL(string: url) else { return }
         
-        ImageLoader.shared.downloadImage(urlString) { result in
+        ImageLoader.shared.downloadImage(urlString) { [weak self] result in
             switch result {
             case .success(let imageData):
-                DispatchQueue.main.async { [weak self] in
+                DispatchQueue.main.async {
                     self?.imageView.image = UIImage(data: imageData)
                 }
             case .failure(let error):

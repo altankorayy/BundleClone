@@ -49,7 +49,6 @@
 		E1A44FF72B0133740096AC35 /* BundleCloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A44FF62B0133740096AC35 /* BundleCloneUITestsLaunchTests.swift */; };
 		E1B07B712B24C683005B840E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B07B702B24C683005B840E /* SettingsViewController.swift */; };
 		E1E52BBB2B178FF700077484 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E52BBA2B178FF700077484 /* DetailsViewController.swift */; };
-		E1F7CA042B2751F200088C19 /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F7CA032B2751F200088C19 /* DataPersistanceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,7 +116,6 @@
 		E1A44FF62B0133740096AC35 /* BundleCloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleCloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E1B07B702B24C683005B840E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E1E52BBA2B178FF700077484 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
-		E1F7CA032B2751F200088C19 /* DataPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +164,6 @@
 			children = (
 				E14601902B13750C00FEEF3E /* ImageLoader.swift */,
 				E14346922B16424D00608BB5 /* APICacheManager.swift */,
-				E1F7CA032B2751F200088C19 /* DataPersistanceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -540,7 +537,6 @@
 				E1B07B712B24C683005B840E /* SettingsViewController.swift in Sources */,
 				E16FE1C22B0136BF00677464 /* FeaturedViewController.swift in Sources */,
 				E15CA9662B0FC2A700884139 /* APIRequest.swift in Sources */,
-				E1F7CA042B2751F200088C19 /* DataPersistanceManager.swift in Sources */,
 				E14C2ADE2B0146E700A57A78 /* HomeCollectionViewCell.swift in Sources */,
 				E1884C262B14A2F40064E190 /* MenuViewController.swift in Sources */,
 			);

@@ -25,7 +25,7 @@ class RemoveAdsViewController: UIViewController {
         let firstWordColor = UIColor.red
         attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: firstWordColor, range: firstWordRange)
         label.attributedText = attributedString
-        label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: UIDevice.isiPhone ? 30 : 40, weight: .bold)
         return label
     }()
     
@@ -33,7 +33,7 @@ class RemoveAdsViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Bundle Premium"
-        label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: UIDevice.isiPhone ? 30 : 40, weight: .bold)
         label.textColor = .label
         return label
     }()
@@ -50,7 +50,7 @@ class RemoveAdsViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "AD - FREE NEWS FEED"
-        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: UIDevice.isiPhone ? 14 : 24, weight: .bold)
         label.textColor = .label
         return label
     }()
@@ -59,7 +59,7 @@ class RemoveAdsViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Hide the native ads that show up in your news feed."
-        label.font = UIFont.systemFont(ofSize: 13, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: UIDevice.isiPhone ? 13 : 18, weight: .regular)
         label.textColor = .secondaryLabel
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -74,7 +74,7 @@ class RemoveAdsViewController: UIViewController {
         attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: title.count))
         button.setAttributedTitle(attributedString, for: .normal)
         button.setTitleColor(UIColor.red, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .regular)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: UIDevice.isiPhone ? 13 : 18, weight: .regular)
         return button
     }()
     
@@ -84,7 +84,7 @@ class RemoveAdsViewController: UIViewController {
         button.setTitle("₺12,99 / Month", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
         button.backgroundColor = UIColor.red
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: UIDevice.isiPhone ? 13 : 16, weight: .bold)
         return button
     }()
     
@@ -93,7 +93,7 @@ class RemoveAdsViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("₺129,99 / Year", for: .normal)
         button.setTitleColor(UIColor.label, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: UIDevice.isiPhone ? 13 : 16, weight: .bold)
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.red.cgColor
         return button
@@ -154,8 +154,8 @@ class RemoveAdsViewController: UIViewController {
             
             premiumImage.topAnchor.constraint(equalTo: premiumLabel.bottomAnchor, constant: 10),
             premiumImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            premiumImage.widthAnchor.constraint(equalToConstant: 250),
-            premiumImage.heightAnchor.constraint(equalToConstant: 250),
+            premiumImage.widthAnchor.constraint(equalToConstant: UIDevice.isiPhone ? 250 : 300),
+            premiumImage.heightAnchor.constraint(equalToConstant: UIDevice.isiPhone ? 250 : 300),
             
             addfreeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             addfreeLabel.topAnchor.constraint(equalTo: premiumImage.bottomAnchor, constant: 10),
@@ -168,12 +168,12 @@ class RemoveAdsViewController: UIViewController {
             detailsButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 5),
             
             monthlyPurchaseButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70),
-            monthlyPurchaseButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
+            monthlyPurchaseButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: UIDevice.isiPhone ? -30 : -(view.frame.width/3)-30),
             monthlyPurchaseButton.heightAnchor.constraint(equalToConstant: 45),
             monthlyPurchaseButton.widthAnchor.constraint(equalToConstant: 150),
             
             yearPurchaseButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70),
-            yearPurchaseButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30),
+            yearPurchaseButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: UIDevice.isiPhone ? 30 : (view.frame.width/3)+30),
             yearPurchaseButton.heightAnchor.constraint(equalToConstant: 45),
             yearPurchaseButton.widthAnchor.constraint(equalToConstant: 160)
         ])

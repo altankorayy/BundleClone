@@ -149,7 +149,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UIDevice.isiPhone ? 60 : 100
+        return UIDevice.isiPhone ? 60 : 80
     }
     
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {

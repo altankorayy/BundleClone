@@ -16,7 +16,7 @@ class HomeVCNavigationBarView: UIView {
         collectionView.register(HomeVCNavigationBarViewCollectionViewCell.self, forCellWithReuseIdentifier: HomeVCNavigationBarViewCollectionViewCell.identifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.backgroundColor = UIColor.setColor(lightColor: .white, darkColor: UIColor.bundleColor)
+        collectionView.backgroundColor = UIColor.clear
         return collectionView
     }()
 
@@ -24,7 +24,7 @@ class HomeVCNavigationBarView: UIView {
         super.init(frame: frame)
         
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor.setColor(lightColor: .white, darkColor: UIColor.bundleColor)
+        backgroundColor = UIColor.clear
         
         addSubviews(collectionView)
         collectionView.delegate = self
@@ -66,6 +66,6 @@ extension HomeVCNavigationBarView: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 65, height: 50)
+        return CGSize(width: UIDevice.isiPhone ? 65 : 85, height: 50)
     }
 }
