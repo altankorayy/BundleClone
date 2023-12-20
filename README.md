@@ -65,5 +65,5 @@ Universal (iOS, MacOS, iPadOS) news app.
 </div>
 
 ## Important
-*EN: This application has no affiliation with Bundle. It is a fan-made app created for educational purposes. Contact: altankoraybenli@gmail.com
+*EN: This application has no affiliation with Bundle. It is a fan-made app created for educational purposes. Contact: altankoraybenli@gmail.com<br>
 *TR: Bu uygulamanın Bundle ile hiçbir bağlantısı yoktur. Tamamen fan yapımı bir uygulamadır ve eğitim amaçlıdır. İletişim için: altankoraybenli@gmail.com
