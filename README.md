@@ -30,7 +30,7 @@ Universal (iOS, MacOS, iPadOS) news app.
 * Customized Navigation Bar
 * Date Formatter
 * View animations
-And more…
+* And more…
 
 ## API
 * Newsapi.org
