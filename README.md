@@ -56,7 +56,7 @@ Universal (iOS, MacOS, iPadOS) news app.
 
 <div class="row">
   <img src="https://github.com/altankorayy/BundleClone/assets/67483357/cb7f4d9f-2224-4ff0-b5ca-24de1ee8031a" width="200" height="400" class="col-md-6">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/80f7e39d-3752-4159-81fc-11cd918b97d2" width="200" height="400" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/01f9e31c-346c-457e-a6b3-bb0fbdbc2cb8" width="200" height="400" class="col-md-6">
   <img src="https://github.com/altankorayy/BundleClone/assets/67483357/a1da5115-e11a-45c3-8ee3-0d7767586b5e" width="200" height="400" class="col-md-6">
 </div>
 
