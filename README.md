@@ -7,7 +7,7 @@ Universal (iOS, MacOS, iPadOS) news app.
 
 <div class="row">
   <img src="https://github.com/altankorayy/BundleClone/assets/67483357/e85a9e50-d13a-48ca-9a45-22e83b217572" width="250" height="500" class="col-md-6">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/dd5ec62c-114d-4d83-92e7-70a61f2084d6" width="700" height="600" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/dd5ec62c-114d-4d83-92e7-70a61f2084d6" width="600" height="600" class="col-md-6">
 </div>
 
 ## Tech Used
