@@ -7,7 +7,7 @@ Universal (iOS, MacOS, iPadOS) news app.
 
 <div class="row">
   <img src="https://github.com/altankorayy/BundleClone/assets/67483357/e85a9e50-d13a-48ca-9a45-22e83b217572" width="300" height="600" class="col-md-6">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/dd5ec62c-114d-4d83-92e7-70a61f2084d6" width="400" height="800" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/dd5ec62c-114d-4d83-92e7-70a61f2084d6" width="400" height="600" class="col-md-6">
 </div>
 
 ## Tech Used
@@ -43,25 +43,25 @@ And more…
 </div>
 
 <div class="row">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/7be5868b-d056-4fdf-b916-ab1b1e8d35e6" width="300" height="600" class="col-md-6">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/73f4c86e-6e6d-47df-984a-24021e8d64c6" width="300" height="600" class="col-md-6">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/14499aab-1749-4fde-9e12-886ebed4121b" width="300" height="600" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/7be5868b-d056-4fdf-b916-ab1b1e8d35e6" width="200" height="400" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/73f4c86e-6e6d-47df-984a-24021e8d64c6" width="200" height="400" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/14499aab-1749-4fde-9e12-886ebed4121b" width="200" height="400" class="col-md-6">
 </div>
 
 <div class="row">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/bd60b741-33d3-4126-9001-183f74c43975" width="300" height="600" class="col-md-6">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/ed2cf16e-e40c-4447-bf44-49a5a43894b7" width="300" height="600" class="col-md-6">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/63956211-8d64-480c-be5c-9af4270b03e4" width="300" height="600" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/bd60b741-33d3-4126-9001-183f74c43975" width="200" height="400" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/ed2cf16e-e40c-4447-bf44-49a5a43894b7" width="200" height="400" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/63956211-8d64-480c-be5c-9af4270b03e4" width="200" height="400" class="col-md-6">
 </div>
 
 <div class="row">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/cb7f4d9f-2224-4ff0-b5ca-24de1ee8031a" width="300" height="600" class="col-md-6">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/80f7e39d-3752-4159-81fc-11cd918b97d2" width="300" height="600" class="col-md-6">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/a1da5115-e11a-45c3-8ee3-0d7767586b5e" width="300" height="600" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/cb7f4d9f-2224-4ff0-b5ca-24de1ee8031a" width="200" height="400" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/80f7e39d-3752-4159-81fc-11cd918b97d2" width="200" height="400" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/a1da5115-e11a-45c3-8ee3-0d7767586b5e" width="200" height="400" class="col-md-6">
 </div>
 
 <div class="row">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/f23f56b0-efb6-406d-943c-26cd45588b7c" width="300" height="600" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/f23f56b0-efb6-406d-943c-26cd45588b7c" width="200" height="400" class="col-md-6">
 </div>
 
 ## Important
