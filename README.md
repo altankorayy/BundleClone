@@ -6,7 +6,7 @@ Universal (iOS, MacOS, iPadOS) news app.
   <p><a href="https://www.buymeacoffee.com/altankoray" target="_blank">Buy Me a Coffee</a>.</p>
 
 <div class="row">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/e85a9e50-d13a-48ca-9a45-22e83b217572" width="300" height="600" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/e85a9e50-d13a-48ca-9a45-22e83b217572" width="200" height="400" class="col-md-6">
   <img src="https://github.com/altankorayy/BundleClone/assets/67483357/dd5ec62c-114d-4d83-92e7-70a61f2084d6" width="400" height="600" class="col-md-6">
 </div>
 
@@ -50,8 +50,8 @@ And more…
 
 <div class="row">
   <img src="https://github.com/altankorayy/BundleClone/assets/67483357/bd60b741-33d3-4126-9001-183f74c43975" width="200" height="400" class="col-md-6">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/ed2cf16e-e40c-4447-bf44-49a5a43894b7" width="200" height="400" class="col-md-6">
   <img src="https://github.com/altankorayy/BundleClone/assets/67483357/63956211-8d64-480c-be5c-9af4270b03e4" width="200" height="400" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/ed2cf16e-e40c-4447-bf44-49a5a43894b7" width="200" height="400" class="col-md-6">
 </div>
 
 <div class="row">
