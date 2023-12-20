@@ -7,7 +7,7 @@ Universal (iOS, MacOS, iPadOS) news app.
 
 <div class="row">
   <img src="https://github.com/altankorayy/BundleClone/assets/67483357/e85a9e50-d13a-48ca-9a45-22e83b217572" width="300" height="600" class="col-md-6">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/dd5ec62c-114d-4d83-92e7-70a61f2084d6" width="300" height="600" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/dd5ec62c-114d-4d83-92e7-70a61f2084d6" width="400" height="800" class="col-md-6">
 </div>
 
 ## Tech Used
@@ -37,9 +37,9 @@ And more…
 
 ## Screenshots
 <div class="row">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/e85a9e50-d13a-48ca-9a45-22e83b217572" width="300" height="600" class="col-md-6">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/56da25a6-9895-4ce9-b825-84519c96e3a6" width="300" height="600" class="col-md-6">
-  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/718dbbda-62c1-4b8b-9a63-39e14e4b4316" width="300" height="600" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/e85a9e50-d13a-48ca-9a45-22e83b217572" width="200" height="400" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/56da25a6-9895-4ce9-b825-84519c96e3a6" width="200" height="400" class="col-md-6">
+  <img src="https://github.com/altankorayy/BundleClone/assets/67483357/718dbbda-62c1-4b8b-9a63-39e14e4b4316" width="200" height="400" class="col-md-6">
 </div>
 
 <div class="row">
