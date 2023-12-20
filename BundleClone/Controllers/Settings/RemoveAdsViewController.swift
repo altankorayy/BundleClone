@@ -168,12 +168,12 @@ class RemoveAdsViewController: UIViewController {
             detailsButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 5),
             
             monthlyPurchaseButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70),
-            monthlyPurchaseButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: UIDevice.isiPhone ? -30 : -(view.frame.width/3)-30),
+            monthlyPurchaseButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: UIDevice.isiPhone ? 30 : (view.frame.width/3)+30),
             monthlyPurchaseButton.heightAnchor.constraint(equalToConstant: 45),
             monthlyPurchaseButton.widthAnchor.constraint(equalToConstant: 150),
             
             yearPurchaseButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70),
-            yearPurchaseButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: UIDevice.isiPhone ? 30 : (view.frame.width/3)+30),
+            yearPurchaseButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: UIDevice.isiPhone ? -30 : -(view.frame.width/3)-30),
             yearPurchaseButton.heightAnchor.constraint(equalToConstant: 45),
             yearPurchaseButton.widthAnchor.constraint(equalToConstant: 160)
         ])
