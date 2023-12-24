@@ -172,8 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				E16FE1BF2B0136B300677464 /* HomeViewController.swift */,
-				E14C2ADD2B0146E700A57A78 /* HomeCollectionViewCell.swift */,
-				E1052DC72B2F55D800253A6C /* HomeVCNavigationBarViewCollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -182,8 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				E16FE1C12B0136BF00677464 /* FeaturedViewController.swift */,
-				E17F6A102B02994B005136F3 /* FeaturedTableViewCell.swift */,
-				E165CB7C2B17599B001AF30E /* FeaturedHeaderCollectionViewCell.swift */,
 			);
 			path = Featured;
 			sourceTree = "<group>";
@@ -201,6 +197,58 @@
 			isa = PBXGroup;
 			children = (
 				E16FE1C52B0136E500677464 /* NotificationsViewController.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		E15245372B388C6000734C37 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E152453B2B388CF400734C37 /* Notifications */,
+				E152453A2B388CD400734C37 /* Featured */,
+				E15245392B388CB100734C37 /* Home */,
+				E1884C272B14AF7E0064E190 /* MenuTableViewCell.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E15245382B388C6600734C37 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				E1A44FD72B0133730096AC35 /* TabBarController.swift */,
+				E1B07B6F2B24C657005B840E /* Settings */,
+				E13E293B2B192642007CBC21 /* WebView */,
+				E14C2ADC2B0146B200A57A78 /* Notifications */,
+				E14C2ADB2B0146AA00A57A78 /* ContentStore */,
+				E14C2ADA2B0146A200A57A78 /* Featured */,
+				E14C2AD92B01469500A57A78 /* Home */,
+				E1884C1E2B149ECE0064E190 /* SideMenu */,
+				E1E52BB92B178FE900077484 /* Details */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		E15245392B388CB100734C37 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E1052DC72B2F55D800253A6C /* HomeVCNavigationBarViewCollectionViewCell.swift */,
+				E14C2ADD2B0146E700A57A78 /* HomeCollectionViewCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E152453A2B388CD400734C37 /* Featured */ = {
+			isa = PBXGroup;
+			children = (
+				E165CB7C2B17599B001AF30E /* FeaturedHeaderCollectionViewCell.swift */,
+				E17F6A102B02994B005136F3 /* FeaturedTableViewCell.swift */,
+			);
+			path = Featured;
+			sourceTree = "<group>";
+		};
+		E152453B2B388CF400734C37 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
 				E17F6A152B02AB8E005136F3 /* NotificationsTableViewCell.swift */,
 			);
 			path = Notifications;
@@ -231,7 +279,6 @@
 			children = (
 				E1884C232B14A2D00064E190 /* ContainerViewController.swift */,
 				E1884C252B14A2F40064E190 /* MenuViewController.swift */,
-				E1884C272B14AF7E0064E190 /* MenuTableViewCell.swift */,
 				E1100CA42B2494050030C5CB /* SideMenuDetailVC */,
 			);
 			path = SideMenu;
@@ -303,15 +350,8 @@
 		E1A450042B0133F10096AC35 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E1E52BB92B178FE900077484 /* Details */,
-				E1884C1E2B149ECE0064E190 /* SideMenu */,
-				E14C2AD92B01469500A57A78 /* Home */,
-				E14C2ADA2B0146A200A57A78 /* Featured */,
-				E14C2ADB2B0146AA00A57A78 /* ContentStore */,
-				E14C2ADC2B0146B200A57A78 /* Notifications */,
-				E13E293B2B192642007CBC21 /* WebView */,
-				E1B07B6F2B24C657005B840E /* Settings */,
-				E1A44FD72B0133730096AC35 /* TabBarController.swift */,
+				E15245372B388C6000734C37 /* Core */,
+				E15245382B388C6600734C37 /* Others */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
