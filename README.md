@@ -2,8 +2,11 @@
 
 Universal (iOS, MacOS, iPadOS) news app.
 
-<h2>💖 Support</h2>
-  <p><a href="https://www.buymeacoffee.com/altankoray" target="_blank">Buy Me a Coffee</a></p>
+<h2>💖 Support Me </h2>
+  </a>
+  <a href="https://www.buymeacoffee.com/altankoray" target="_blank" rel="noreferrer">
+    <img width="150" alt="yellow-button" src="https://github.com/altankorayy/altankorayy/assets/67483357/e0971e21-a499-448e-8b6b-81a7fede2e90">
+  </a>
 
 <div class="row">
   <img src="https://github.com/altankorayy/BundleClone/assets/67483357/e85a9e50-d13a-48ca-9a45-22e83b217572" width="250" height="500" class="col-md-6">
