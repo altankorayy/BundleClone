@@ -2,7 +2,7 @@
 
 Universal (iOS, MacOS, iPadOS) news app.
 
-<h2>Support</h2>
+<h2>💖 Support</h2>
   <p><a href="https://www.buymeacoffee.com/altankoray" target="_blank">Buy Me a Coffee</a>.</p>
 
 <div class="row">
