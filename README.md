@@ -7,6 +7,12 @@ Universal (iOS, MacOS, iPadOS) news app.
   <img src="https://github.com/altankorayy/BundleClone/assets/67483357/dd5ec62c-114d-4d83-92e7-70a61f2084d6" width="500" height="600" class="col-md-6">
 </div>
 
+<h2>💖 Support Me</h2>
+  </a>
+  <a href="https://www.buymeacoffee.com/altankoray" target="_blank" rel="noreferrer">
+    <img width="150" alt="yellow-button" src="https://github.com/altankorayy/altankorayy/assets/67483357/e0971e21-a499-448e-8b6b-81a7fede2e90">
+  </a>
+
 ## Tech Used
 * Designed with MVVM pattern
 * Generic API requests and search
